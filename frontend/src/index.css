@@ -1,0 +1,15 @@
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+.th-animation-hover {
+  @apply hover:transition-all z-20 hover:ease-in-out hover:duration-300;
+}
+.th-bd{
+  @apply border-[1px] border-black
+}
+.th-btn{
+  @apply flex justify-center items-center bg-black text-white text-sm px-4 py-2 rounded-md
+}
