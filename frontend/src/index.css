@@ -1,0 +1,251 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: #f0f0f0; */
+}
+.li {
+  height: 2px;
+  width: 100%;
+  margin: 0;
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  height: 2px;
+  width: 33.33%;
+}
+.stripe {
+  background-color: #f18d9b;
+  /* width: 150%; */
+  height: 2px;
+  width: 30px;
+}
+.red {
+  background-color: #6fa6d6;
+  /* width: 150%; */
+  height: 2px;
+  width: 30px;
+}
+.white {
+  background-color: white;
+  /* width: 150%; */
+  height: 2px;
+  width: 30px;
+}
+.custom-marker-cluster {
+  background-color: #9370db;
+  border: 3px solid #ededed;
+  border-radius: 50%;
+  color: #ededed;
+  height: 200px;
+  line-height: 100px;
+  text-align: center;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+.custom-marker-cluster span {
+  font-size: 5rem;
+}
+.scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: gray #f5f5f5;
+  z-index: 0;
+  /* position:  absolute; */
+}
+.scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: gray;
+}
+.scrollbar::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+.th-animation-hover {
+  @apply hover:transition-all z-20 hover:ease-in-out hover:duration-300;
+}
+.th-bd {
+  @apply border-[1px] border-black;
+}
+/* .th-btn {
+  @apply flex justify-center items-center bg-black text-white text-sm px-4 py-2 rounded-md;
+} */
+.th-fl {
+  @apply flex justify-center items-center;
+}
+.th-bdimg {
+  @apply border-[1px] border-gray-200;
+}
+.th-btn {
+  @apply px-6 py-2 border-[1px] border-gray-400 hover:text-red-500 hover:border-red-500 rounded-sm;
+}
+
+/* data-theme~=light : là 1 attribute của .tippy-box */
+
+/* dùng cho tất cả để bỏ đi phần padding xung quanh */
+.tippy-content {
+  padding: 0 !important;
+  transition-duration: 2s, 2s !important;
+  transition-delay: 500ms;
+}
+/* --------------------------Mẫu custum ko viền--------------------------------- */
+.tippy-box[data-theme~="light1"] {
+  color: #26323d;
+  box-shadow: 35 0 20px 4px rgba(154, 161, 177, 0.15), 0 4px 80px -8px rgba(36, 40, 47, 0.25),
+    0 4px 4px -2px rgba(91, 94, 105, 0.15);
+  background-color: #fff;
+  max-width: none !important;
+}
+.tippy-box[data-theme~="light1"][data-placement^="bottom"] > .tippy-arrow:before {
+  /* đã custom */
+  top: -14px;
+  left: -4px;
+  border-width: 0 14px 14px;
+  border-bottom-color: initial;
+  transform-origin: center bottom;
+}
+/* -----------------------------Mẫu custum có viền---------------------------------- */
+.tippy-box[data-theme~="light-border"] {
+  background-color: #fff; /*màu content*/
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 8, 16, 0.2); /*viền content*/
+  color: #333;
+  box-shadow: 0 4px 14px -2px rgba(0, 8, 16, 0.08);
+  max-width: none !important;
+}
+.tippy-box[data-theme~="light-border"][data-placement^="bottom"] > .tippy-arrow::before {
+  /* mặc định */
+  /* khi bạn custom lại kích thước arrow thì bạn cũng phải custom lại 
+  kích thước và vị trí viền cho nó(cho border-width ở phần before tăng 
+  hoặc giảm 1px so với border-width ở phần after ) */
+  top: -7px;
+  left: 0;
+  border-width: 0 8px 8px;
+  border-bottom-color: #fff;
+  transform-origin: center bottom; /*màu mũi tên*/
+}
+.tippy-box[data-theme~="light-border"][data-placement^="bottom"] > .tippy-arrow:after {
+  border-color: transparent;
+  border-style: solid;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-bottom-color: rgba(0, 8, 16, 0.2); /* viền mũi tên  */
+  border-width: 0 7px 7px;
+  bottom: 17px;
+  left: 1px;
+}
+/* ---------------------------------------------------------------------------------- */
+
+/* ---------------------------- thêm từng bộ ở đây ------------------------------------ */
+.tippy-box[data-theme~="notification"] {
+  background-color: #fff; /*màu content*/
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 8, 16, 0.2); /*viền content*/
+  color: #333;
+  box-shadow: 0 4px 14px -2px rgba(0, 8, 16, 0.08);
+  max-width: none !important;
+}
+.tippy-box[data-theme~="notification"][data-placement^="bottom"] > .tippy-arrow::before {
+  /* mặc định */
+  top: -7px;
+  left: 0;
+  border-width: 0 8px 8px;
+  border-bottom-color: #fff; /*màu mũi tên*/
+  transform-origin: center bottom;
+}
+.tippy-box[data-theme~="notification"][data-placement^="bottom"] > .tippy-arrow:after {
+  border-color: transparent;
+  border-style: solid;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-bottom-color: rgba(0, 8, 16, 0.2); /* viền mũi tên  */
+  border-width: 0 7px 7px;
+  bottom: 17px;
+  left: 1px;
+}
+
+/* ----------------------------------------------------------------- */
+.tippy-box[data-theme~="language"][data-placement^="bottom"] > .tippy-arrow::before {
+  border-bottom-color: #db1f18;
+}
+.tippy-box[data-theme~="language"] {
+  color: #26323d;
+  box-shadow: 35 0 20px 4px rgba(154, 161, 177, 0.15), 0 4px 80px -8px rgba(36, 40, 47, 0.25),
+    0 4px 4px -2px rgba(91, 94, 105, 0.15);
+  background-color: #fff;
+  max-width: none !important;
+}
+
+/* ----------------------CSS LOADING-------------------------- */
+.th-loading {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+.th-loading div {
+  animation: th-loading 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 20px 20px;
+}
+.th-loading div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3affff;
+  margin: -4px 0 0 -4px;
+}
+.th-loading div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.th-loading div:nth-child(1):after {
+  left: 6px;
+}
+.th-loading div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.th-loading div:nth-child(2):after {
+  top: -3px;
+  left: 13px;
+}
+.th-loading div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.th-loading div:nth-child(3):after {
+  left: 20px;
+  top: -4px;
+}
+.th-loading div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.th-loading div:nth-child(4):after {
+  top: -3px;
+  left: 27px;
+}
+.th-loading div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.th-loading div:nth-child(5):after {
+  left: 34px;
+}
+@keyframes th-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
