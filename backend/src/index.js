@@ -49,8 +49,13 @@ app.use(function (err, req, res, next) {
   console.error(err);
   res.status(err.statusCode || 500).json(err.message);
 });
+app.get("/", (req, res) => {
+  res.send("Hello world from backend server!");
+});
 
-const server = app.listen(process.env.PORT)
+const server = app.listen(process.env.PORT,() => {
+  console.log(`server is running on port ${process.env.PORT}`);
+})
 
 // unhandled promise rejection
 process.on("",(err)=>{
