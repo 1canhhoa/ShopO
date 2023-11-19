@@ -3,19 +3,87 @@ export const navItems = [
   {
     title: "Homepage",
     url: "/",
-    chevron: <ChevronBottom className="w-4 h-4" />
+    chevron: <ChevronBottom className="w-4 h-4" />,
+    Content: [
+      {
+        name: 'Home One',
+      },
+      {
+        name: 'Home Two',
+      },
+      {
+        name: 'Home Three',
+      },
+      {
+        name: 'Home Four',
+      },
+      {
+        name: 'Home Five',
+      },
+    ]
   },
   {
     title: "Shop",
     url: "/shop",
-    chevron: <ChevronBottom className="w-4 h-4" />
+    chevron: <ChevronBottom className="w-4 h-4" />,
+    Content: [
+      {
+        name: 'SHOP LIST',
+        item: [
+          { name: "Shop Sidebar" },
+          { name: "Shop Fullwidth" },
+          { name: "Shop Category Icon" },
+          { name: "Shop Category Icon" },
+          { name: "Shop List" },
+          { name: "View" }]
+      },
 
+      {
+        name: 'PRODUCT LAYOUTS',
+        item: [
+          { name: "Horizonral Thumbnail" },
+          { name: "Vertical Thumbnail" },
+          { name: "Gallery Thumbnail" },
+          { name: "Sticky Summary" }
+        ]
+      },
+      {
+        name: 'POLULAR CATEGORY',
+        item: [
+          { name: "Phone & Tablet" },
+          { name: "Gaming & Sports" },
+          { name: "Home Appliance" },
+          { name: "Fashion Clothes" }
+        ]
+      },
+    ]
   },
   {
     title: "FAQ",
     url: "/faq",
-    chevron: <ChevronBottom className="w-4 h-4" />
+    chevron: <ChevronBottom className="w-4 h-4" />,
+    Content: [
+      {
+        name: 'Privacy Policy',
+      },
+      {
+        name: 'Terms and Conditions',
+      },
+      {
+        name: 'FAQ',
+        url: "/faq",
+      },
+      {
+        name: 'Shop Category Icon',
+      },
+      {
+        name: 'Shop List View',
+      },
+    ]
   },
+
+];
+export const navItems2 = [
   {
     title: "About",
     url: "/about",
@@ -30,6 +98,20 @@ export const navItems = [
   },
 ];
 
+export const shopHeader = [
+  {
+    name: 'SHOP LIST',
+    item: ["Shop Sidebar", "Shop Fullwidth", "Shop Category Icon", "Shop Category Icon", "Shop List", "View"]
+  },
+  {
+    name: 'PRODUCT LAYOUTS',
+    item: ["Horizonral Thumbnail", "Vertical Thumbnail", "Gallery Thumbnail", "Sticky Summary",]
+  },
+  {
+    name: 'POLULAR CATEGORY',
+    item: ["Phone & Tablet", "Gaming & Sports", "Home Appliance", "Fashion Clothes"]
+  },
+]
 // branding data
 export const brandingData = [
   {
@@ -201,7 +283,7 @@ export const categoriesData = [
     id: 1,
     title: "phones & accessories",
     subTitle: "",
-    image_Url:
+    capacities:
       "https://down-vn.img.susercontent.com/file/31234a27876fb89cd522d7e3db1ba5ca_tn",
     Logo: <MobileIcon />
   },
@@ -209,7 +291,7 @@ export const categoriesData = [
     id: 2,
     title: "electronic device",
     subTitle: "",
-    image_Url:
+    capacities:
       "https://down-vn.img.susercontent.com/file/978b9e4cb61c611aaaf58664fae133c5_tn",
     Logo: <GamingIcon />
   },
@@ -217,7 +299,7 @@ export const categoriesData = [
     id: 3,
     title: "Image & Video",
     subTitle: "",
-    image_Url:
+    capacities:
       "https://down-vn.img.susercontent.com/file/ec14dd4fc238e676e43be2a911414d4d_tn",
     Logo: <VideoIcon />
   },
@@ -225,7 +307,7 @@ export const categoriesData = [
     id: 4,
     title: "Vehicles",
     subTitle: "",
-    image_Url:
+    capacities:
       "https://down-vn.img.susercontent.com/file/3fb459e3449905545701b418e8220334_tn",
     Logo: <VehicleIcon />
   },
@@ -233,7 +315,7 @@ export const categoriesData = [
     id: 5,
     title: "Furnitures",
     subTitle: "",
-    image_Url:
+    capacities:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvBQPQMVNRd6TtDkGs2dCri0Y-rxKkFOiEWw&usqp=CAU",
     Logo: <FurnitureIcon />
   },
@@ -241,7 +323,7 @@ export const categoriesData = [
     id: 6,
     title: "Sports & travel",
     subTitle: "",
-    image_Url:
+    capacities:
       "https://down-vn.img.susercontent.com/file/6cb7e633f8b63757463b676bd19a50e4_tn",
     Logo: <SportIcon />
   },
@@ -249,14 +331,14 @@ export const categoriesData = [
     id: 7,
     title: "Food & Drinks",
     subTitle: "",
-    image_Url: "https://down-vn.img.susercontent.com/file/c432168ee788f903f1ea024487f2c889_tn",
+    capacities: "https://down-vn.img.susercontent.com/file/c432168ee788f903f1ea024487f2c889_tn",
     Logo: <FoodAndDinkIcon />
   },
   {
     id: 8,
     title: "Fashion Accessories",
     subTitle: "",
-    image_Url:
+    capacities:
       "https://down-vn.img.susercontent.com/file/8e71245b9659ea72c1b4e737be5cf42e_tn",
     Logo: <FashionIcon />
   },
@@ -264,7 +346,7 @@ export const categoriesData = [
     id: 9,
     title: "Makeup Corner",
     subTitle: "",
-    image_Url:
+    capacities:
       "https://down-vn.img.susercontent.com/file/ef1f336ecc6f97b790d5aae9916dcb72_tn",
     Logo: <MakeupIcon />
   },
@@ -272,7 +354,7 @@ export const categoriesData = [
     id: 10,
     title: "Mother & baby",
     subTitle: "",
-    image_Url:
+    capacities:
       "https://down-vn.img.susercontent.com/file/099edde1ab31df35bc255912bab54a5e_tn",
     Logo: <BabyIcon />
   },
@@ -282,7 +364,7 @@ export const categoriesDataFull = [
     id: 1,
     title: "phones & accessories",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/31234a27876fb89cd522d7e3db1ba5ca_tn",
     Logo: <MobileIcon />
   },
@@ -290,7 +372,7 @@ export const categoriesDataFull = [
     id: 2,
     title: "electronic device",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/978b9e4cb61c611aaaf58664fae133c5_tn",
     Logo: <GamingIcon />
   },
@@ -298,7 +380,7 @@ export const categoriesDataFull = [
     id: 3,
     title: "Image & Video",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/ec14dd4fc238e676e43be2a911414d4d_tn",
     Logo: <VideoIcon />
   },
@@ -306,7 +388,7 @@ export const categoriesDataFull = [
     id: 4,
     title: "Vehicles",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/3fb459e3449905545701b418e8220334_tn",
     Logo: <VehicleIcon />
   },
@@ -314,7 +396,7 @@ export const categoriesDataFull = [
     id: 5,
     title: "Furnitures",
     subTitle: "",
-    image_Url:
+    url:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvBQPQMVNRd6TtDkGs2dCri0Y-rxKkFOiEWw&usqp=CAU",
     Logo: <FurnitureIcon />
   },
@@ -322,7 +404,7 @@ export const categoriesDataFull = [
     id: 6,
     title: "Sports & travel",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/6cb7e633f8b63757463b676bd19a50e4_tn",
     Logo: <SportIcon />
   },
@@ -330,14 +412,14 @@ export const categoriesDataFull = [
     id: 7,
     title: "Food & Drinks",
     subTitle: "",
-    image_Url: "https://down-vn.img.susercontent.com/file/c432168ee788f903f1ea024487f2c889_tn",
+    url: "https://down-vn.img.susercontent.com/file/c432168ee788f903f1ea024487f2c889_tn",
     Logo: <FoodAndDinkIcon />
   },
   {
     id: 8,
     title: "Fashion Accessories",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/8e71245b9659ea72c1b4e737be5cf42e_tn",
     Logo: <FashionIcon />
   },
@@ -345,7 +427,7 @@ export const categoriesDataFull = [
     id: 9,
     title: "Makeup Corner",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/ef1f336ecc6f97b790d5aae9916dcb72_tn",
     Logo: <MakeupIcon />
   },
@@ -353,7 +435,7 @@ export const categoriesDataFull = [
     id: 10,
     title: "Mother & baby",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/099edde1ab31df35bc255912bab54a5e_tn",
     Logo: <BabyIcon />
   },
@@ -361,7 +443,7 @@ export const categoriesDataFull = [
     id: 11,
     title: "Men's Fashion",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/687f3967b7c2fe6a134a2c11894eea4b_tn",
     Logo: <BabyIcon />
   },
@@ -369,7 +451,7 @@ export const categoriesDataFull = [
     id: 12,
     title: "Women's Fashion",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/75ea42f9eca124e9cb3cde744c060e4d_tn",
     Logo: <BabyIcon />
   },
@@ -377,7 +459,7 @@ export const categoriesDataFull = [
     id: 13,
     title: "Clock",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/86c294aae72ca1db5f541790f7796260_tn",
     Logo: <BabyIcon />
   },
@@ -385,7 +467,7 @@ export const categoriesDataFull = [
     id: 14,
     title: "Men's shoes",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/74ca517e1fa74dc4d974e5d03c3139de_tn",
     Logo: <BabyIcon />
   },
@@ -393,7 +475,7 @@ export const categoriesDataFull = [
     id: 15,
     title: "Women's shoes",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/48630b7c76a7b62bc070c9e227097847_tn",
     Logo: <BabyIcon />
   },
@@ -401,7 +483,7 @@ export const categoriesDataFull = [
     id: 16,
     title: "Household electrical appliances",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/7abfbfee3c4844652b4a8245e473d857_tn",
     Logo: <BabyIcon />
   },
@@ -409,7 +491,7 @@ export const categoriesDataFull = [
     id: 17,
     title: "home and life",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/24b194a695ea59d384768b7b471d563f_tn",
     Logo: <BabyIcon />
   },
@@ -417,7 +499,7 @@ export const categoriesDataFull = [
     id: 18,
     title: "health",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/49119e891a44fa135f5f6f5fd4cfc747_tn",
     Logo: <BabyIcon />
   },
@@ -425,7 +507,7 @@ export const categoriesDataFull = [
     id: 19,
     title: "women's purse",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/fa6ada2555e8e51f369718bbc92ccc52_tn",
     Logo: <BabyIcon />
   },
@@ -433,7 +515,7 @@ export const categoriesDataFull = [
     id: 20,
     title: "men's backpacks & wallets",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/18fd9d878ad946db2f1bf4e33760c86f_tn",
     Logo: <BabyIcon />
   },
@@ -441,7 +523,7 @@ export const categoriesDataFull = [
     id: 21,
     title: "online bookstore",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/36013311815c55d303b0e6c62d6a8139_tn",
     Logo: <BabyIcon />
   },
@@ -449,7 +531,7 @@ export const categoriesDataFull = [
     id: 22,
     title: "toy",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/ce8f8abc726cafff671d0e5311caa684_tn",
     Logo: <BabyIcon />
   },
@@ -457,7 +539,7 @@ export const categoriesDataFull = [
     id: 23,
     title: "take care of the pet",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/cdf21b1bf4bfff257efe29054ecea1ec_tn",
     Logo: <BabyIcon />
   },
@@ -465,7 +547,7 @@ export const categoriesDataFull = [
     id: 24,
     title: "child fashion",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/4540f87aa3cbe99db739f9e8dd2cdaf0_tn",
     Logo: <BabyIcon />
   },
@@ -473,7 +555,7 @@ export const categoriesDataFull = [
     id: 25,
     title: "laundry and taking care of the house",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/cd8e0d2e6c14c4904058ae20821d0763_tn",
     Logo: <BabyIcon />
   },
@@ -481,7 +563,7 @@ export const categoriesDataFull = [
     id: 26,
     title: "Vouchers & services",
     subTitle: "",
-    image_Url:
+    url:
       "https://down-vn.img.susercontent.com/file/b0f78c3136d2d78d49af71dd1c3f38c1_tn",
     Logo: <BabyIcon />
   },
@@ -489,359 +571,509 @@ export const categoriesDataFull = [
 ];
 // product Data
 export const productData = [
-
-  {
-    id: 4,
-    category: "Others",
-    name: "New Fashionable Watch for men 2023 with multiple colors",
-    description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
-    image_Url: [
-      {
-        public_id: "test",
-        url: "https://i0.wp.com/eccocibd.com/wp-content/uploads/2022/01/1802NL02_1.png?fit=550%2C550&ssl=1",
-      },
-      {
-        public_id: "test",
-        url: "https://i0.wp.com/eccocibd.com/wp-content/uploads/2022/01/1802NL02_1.png?fit=550%2C550&ssl=1",
-      },
-    ],
-    shop: {
-      name: "Shahriar Watch House",
-      shop_avatar: {
-        public_id: "test",
-        url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
-      },
-      ratings: 4.2,
-      category: "Others"
-    },
-    price: 100,
-    Classify: ["Gold", "Deep Purple", "Silver", "Space_Black"],
-
-    discount_price: 79,
-    rating: 4,
-    total_sell: 12,
-    stock: 10,
-    city: "Hanoi"
-  },
-  {
-    id: 8,
-    name: "Gaming Headphone Asus with mutiple color and free delivery",
-    description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
-    image_Url: [
-      {
-        public_id: "test",
-        url: "https://www.startech.com.bd/image/cache/catalog/headphone/havit/h763d/h763d-02-500x500.jpg",
-      },
-      {
-        public_id: "test",
-        url: "https://eratablet.com/wp-content/uploads/2022/08/H51ba6537405f4948972e293927673546u.jpg",
-      },
-    ],
-    shop: {
-      name: "Asus Ltd",
-      shop_avatar: {
-        public_id: "test",
-        url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
-      },
-      ratings: 4.2,
-    },
-    price: 300,
-    discount_price: 239,
-    Classify: ["Gold", "Deep Purple", "Silver", "Space_Black"],
-    rating: 4.5,
-    reviews: [
-      {
-        user: {
-          // user object will be here
-        },
-        comment: "IT's so cool!",
-        rating: 5,
-      },
-    ],
-    total_sell: 20,
-    stock: 10,
-    city: "Caobang"
-  },
-  {
-    id: 10,
-    category: "Music and Gaming",
-    name: "Gaming Headphone Asus with mutiple color and free delivery",
-    description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
-    image_Url: [
-      {
-        public_id: "test",
-        url: "https://www.startech.com.bd/image/cache/catalog/headphone/havit/h763d/h763d-02-500x500.jpg",
-      },
-      {
-        public_id: "test",
-        url: "https://eratablet.com/wp-content/uploads/2022/08/H51ba6537405f4948972e293927673546u.jpg",
-      },
-    ],
-    shop: {
-      name: "Asus Ltd",
-      shop_avatar: {
-        public_id: "test",
-        url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
-      },
-      ratings: 4.2,
-    },
-    price: 300,
-    discount_price: 239,
-    Classify: ["Gold", "Deep Purple", "Silver", "Space_Black"],
-
-    rating: 4.5,
-    reviews: [
-      {
-        user: {
-          // user object will be here
-        },
-        comment: "IT's so cool!",
-        rating: 5,
-      },
-    ],
-    total_sell: 20,
-    stock: 10,
-    city: "Hanoi"
-  },
   {
     id: 9,
     category: "Mobile and Tablets",
     name: "Iphone 14 pro max 256 gb ssd and 8 gb ram silver colour",
     description:
       "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
-    image_Url: [
+    images: [
+      '1a466d100fbb431996b49e10127cf383-1697009207096-74570529.png',
+      '3aaade086d08751f776049fdc99f4c6e-1697009207096-211759638.png',
+      '3af324bc17f502e8b1898fd5a2b01844-1697009207098-771356926.png',
+      '7bb6d3ae9b86f3d7a7b1ca0e48ec311a-1697009207098-143280487.png',
+      'ac7bb23a4358efd92fdcd887fd17023d-1697009207099-214047532.png',
+      'b7addff24c257ae552ee31f16a23af7c-1697009207099-724518975.png',
+      'bdda15455bac30f5bc2b404752bbe3ba-1697009207100-294544908.png',
+      'c1b2e42986f73de8bedb2282e2687626-1697009207101-655624072.png',
+      '198720e37eeccfcdc98c6ea87f5decaa-1697009207101-490880557.png'
+    ],
+    capacities: [
       {
-        public_id: "test",
-        url: "https://m.media-amazon.com/images/I/31Vle5fVdaL.jpg",
+        name: 'gold',
+        url: "ac7bb23a4358efd92fdcd887fd17023d-1697009207094-170440287.png",
+        capacity: [
+          { capacity: "128GB", priceCapacity: 0 },
+          { capacity: "516GB", priceCapacity: 100 },
+          { capacity: "1T", priceCapacity: 200 }
+        ],
       },
       {
-        public_id: "test",
-        url: "https://m.media-amazon.com/images/I/31Vle5fVdaL.jpg",
+        name: "purple",
+        url: "93b3f6d4799b06f9279f817540daa4d1 (1)-1697009207094-956308047.png",
+        capacity: [
+          { capacity: "128GB", priceCapacity: 0 },
+          { capacity: "516GB", priceCapacity: 100 },
+          { capacity: "1T", priceCapacity: 200 }
+        ],
+      },
+      {
+        name: "black",
+        url: "8d928132d881eaf81f19a9e77bfd31a4-1697009207095-697242145.png",
+        capacity: [
+          { capacity: "128GB", priceCapacity: 0 },
+          { capacity: "516GB", priceCapacity: 100 },
+          { capacity: "1T", priceCapacity: 200 }
+        ],
+      },
+      {
+        name: "white",
+        url: "8d928132d881eaf81f19a9e77bfd31a4-1697009207095-306319424.png",
+        capacity: [
+          { capacity: "128GB", priceCapacity: 0 },
+          { capacity: "516GB", priceCapacity: 100 },
+          { capacity: "1T", priceCapacity: 200 }
+        ],
       },
     ],
     shop: {
+      city: "Hanoi",
       name: "Amazon Ltd",
-      shop_avatar: {
-        public_id: "test",
-        url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
-      },
+      avatar: "images (5)-1696863832256-33246516.png",
       ratings: 4.2,
     },
-    price: 1299,
-    discount_price: 1099,
+    originalPrice: 1299,
+    discountPrice: 1099,
     rating: 5,
-    Classify: ["Gold", "Deep Purple", "Silver", "Space_Black"],
-    total_sell: 20,
+    Classify: ["Gold", "Deep Purple", "Silver", "Space_Black", "Blue", "Pink", "Gray"],
+    Capacity: ["128GB", "516GB", "1TB"],
+    sold_out: 20,
     stock: 10,
     city: "Hanoi"
   },
   {
-    id: 7,
+    id: 4,
+    category: "Others",
     name: "New Fashionable Watch for men 2023 with multiple colors",
     description:
       "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
-    image_Url: [
-      {
-        public_id: "test",
-        url: "https://i0.wp.com/eccocibd.com/wp-content/uploads/2022/01/1802NL02_1.png?fit=550%2C550&ssl=1",
-      },
-      {
-        public_id: "test",
-        url: "https://i0.wp.com/eccocibd.com/wp-content/uploads/2022/01/1802NL02_1.png?fit=550%2C550&ssl=1",
-      },
+    images: [
+      '1a466d100fbb431996b49e10127cf383-1697009207096-74570529.png',
+      '3aaade086d08751f776049fdc99f4c6e-1697009207096-211759638.png',
+      '3af324bc17f502e8b1898fd5a2b01844-1697009207098-771356926.png',
+      '7bb6d3ae9b86f3d7a7b1ca0e48ec311a-1697009207098-143280487.png',
+      'ac7bb23a4358efd92fdcd887fd17023d-1697009207099-214047532.png',
+      'b7addff24c257ae552ee31f16a23af7c-1697009207099-724518975.png',
+      'bdda15455bac30f5bc2b404752bbe3ba-1697009207100-294544908.png',
+      'c1b2e42986f73de8bedb2282e2687626-1697009207101-655624072.png',
+      '198720e37eeccfcdc98c6ea87f5decaa-1697009207101-490880557.png'
     ],
+    capacities: [
+      {
+        name: "yellow",
+        url: "ac7bb23a4358efd92fdcd887fd17023d-1697009207094-170440287.png",
+        capacity: [
+          { capacity: "128GB", priceCapacity: 0 },
+          { capacity: "516GB", priceCapacity: 100 },
+          { capacity: "1T", priceCapacity: 200 }
+        ],
+      },
+      {
+        name: "gray",
+        url: "8d928132d881eaf81f19a9e77bfd31a4-1697009207095-306319424.png",
+        capacity: [
+          { capacity: "128GB", priceCapacity: 0 },
+          { capacity: "516GB", priceCapacity: 100 },
+          { capacity: "1T", priceCapacity: 200 }
+        ],
+      },
+      {
+        name: "black",
+        url: "8d928132d881eaf81f19a9e77bfd31a4-1697009207095-697242145.png",
+        Capacity: [
+          { rom: "128GB", price: 0 },
+          { rom: "516GB", price: 100 },
+          { rom: "1T", price: 200 }
+        ],
+      }
+    ],
+    Classify: ["Gold", "Deep Purple", "Silver", "Space_Black", "Blue", "Pink", "Gray"],
     shop: {
+      city: "Hanoi",
       name: "Shahriar Watch House",
-      shop_avatar: {
-        public_id: "test",
-        url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
-      },
-      ratings: 2,
-    },
-    price: 100,
-    discount_price: 79,
-    Classify: ["Gold", "Deep Purple", "Silver", "Space_Black"],
-    rating: 2,
-    total_sell: 62,
-    stock: 10,
-    city: "Sapa"
-  },
-  {
-    id: 6,
-    name: "Gaming Headphone Asus with mutiple color and free delivery",
-    description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
-    image_Url: [
-      {
-        public_id: "test",
-        url: "https://www.startech.com.bd/image/cache/catalog/headphone/havit/h763d/h763d-02-500x500.jpg",
-      },
-      {
-        public_id: "test",
-        url: "https://eratablet.com/wp-content/uploads/2022/08/H51ba6537405f4948972e293927673546u.jpg",
-      },
-    ],
-    shop: {
-      name: "Asus Ltd",
-      shop_avatar: {
-        public_id: "test",
-        url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
-      },
+      avatar: "images (5)-1696863832256-33246516.png",
       ratings: 4.2,
+      category: "Others"
     },
-    price: 300,
-    discount_price: 239,
-    Classify: ["Gold", "Deep Purple", "Silver", "Space_Black"],
-
-    rating: 4.5,
-    reviews: [
-      {
-        user: {
-          // user object will be here
-        },
-        comment: "IT's so cool!",
-        rating: 5,
-      },
-    ],
-    total_sell: 20,
-    stock: 10,
-    category: "Music and Gaming",
-    city: "Tp.HCM"
-  },
-  {
-    id: 1,
-    category: "Computers and Laptops",
-    name: "MacBook pro M2 chipset 256gb ssd 8gb ram space-gray color with apple 1 year warranty",
-    description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
-    image_Url: [
-      {
-        public_id: "test",
-        url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
-      },
-      {
-        public_id: "test",
-        url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
-      },
-    ],
-    shop: {
-      name: "Apple inc.",
-      shop_avatar: {
-        public_id: "test",
-        url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
-      },
-      ratings: 4.2,
-    },
-    price: 1099,
-    discount_price: 1049,
-    Classify: ["Gold", "Deep Purple", "Silver", "Space_Black"],
+    originalPrice: 100,
+    discountPrice: 79,
+    Capacity: ["128GB", "516GB", "1TB"],
     rating: 4,
-    total_sell: 35,
+    sold_out: 12,
     stock: 10,
-    city: "hanoi"
-  },
-  {
-    id: 2,
-    category: "Mobile and Tablets",
-    name: "Iphone 14 pro max 256 gb ssd and 8 gb ram silver colour",
-    description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
-    image_Url: [
-      {
-        public_id: "test",
-        url: "https://m.media-amazon.com/images/I/31Vle5fVdaL.jpg",
-      },
-      {
-        public_id: "test",
-        url: "https://m.media-amazon.com/images/I/31Vle5fVdaL.jpg",
-      },
-    ],
-    shop: {
-      name: "Amazon Ltd",
-      shop_avatar: {
-        public_id: "test",
-        url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
-      },
-      ratings: 4.2,
-    },
-    discount_price: 1099,
-    rating: 5,
-    Classify: ["Gold", "Deep Purple", "Silver", "Space_Black", "Blue", "Green", "Pink", "Blue", "Green", "Pink", "Blue", "Green", "Pink"],
-    total_sell: 80,
-    stock: 10,
-    city: "Tp.HCM"
-  },
-  {
-    id: 3,
-    category: "Computers and Laptop",
-    name: "MacBook pro M2 chipset 256gb ssd 8gb ram space gray color with apple 1 year warranty",
-    description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
-    image_Url: [
-      {
-        public_id: "test",
-        url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
-      },
-      {
-        public_id: "test",
-        url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
-      },
-    ],
-    shop: {
-      name: "Apple inc.",
-      shop_avatar: {
-        public_id: "test",
-        url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
-      },
-      ratings: 4.2,
-    },
-    price: 1099,
-    discount_price: 1049,
-    Classify: ["Gold", "Deep Purple", "Silver", "Space_Black"],
+    city: "Hanoi"
+    // },
+    // {
+    //   id: 8,
+    //   name: "Gaming Headphone Asus with mutiple color and free delivery",
+    //   description:
+    //     "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+    //   images: [
+    //     'https://down-vn.img.susercontent.com/file/93b3f6d4799b06f9279f817540daa4d1',
+    //     'https://down-vn.img.susercontent.com/file/3af324bc17f502e8b1898fd5a2b01844',
+    //     'https://down-vn.img.susercontent.com/file/b7addff24c257ae552ee31f16a23af7c',
+    //     'https://down-vn.img.susercontent.com/file/198720e37eeccfcdc98c6ea87f5decaa',
+    //     'https://down-vn.img.susercontent.com/file/7bb6d3ae9b86f3d7a7b1ca0e48ec311a',
+    //     'https://down-vn.img.susercontent.com/file/bdda15455bac30f5bc2b404752bbe3ba',
+    //     'https://down-vn.img.susercontent.com/file/3aaade086d08751f776049fdc99f4c6e',
+    //     'https://down-vn.img.susercontent.com/file/c1b2e42986f73de8bedb2282e2687626',
+    //     'https://down-vn.img.susercontent.com/file/1a466d100fbb431996b49e10127cf383'
+    //   ],
+    //   capacities: [
+    //     {
+    //       name: "black",
+    //       url: "https://down-vn.img.susercontent.com/file/5545cdee9bdd62674c990f83e051a22b",
+    //     },
+    //     {
+    //       name: "white",
+    //       url: "https://down-vn.img.susercontent.com/file/5545cdee9bdd62674c990f83e051a22b",
+    //     },
+    //   ],
+    //   shop: {
+    //     city: "Hanoi",
+    //     name: "Asus Ltd",
 
-    rating: 4,
-    total_sell: 75,
-    stock: 10,
-    category: "Computers & Laptop",
-    city: "Danang"
-  },
-  {
-    id: 5,
-    category: "Shoes",
-    name: "New Trend shoes for gents with all sizes",
-    description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
-    image_Url: [
-      {
-        public_id: "test",
-        url: "https://mirzacdns3.s3.ap-south-1.amazonaws.com/cache/catalog/RLV0015/2-800x800.jpg",
-      },
-      {
-        public_id: "test",
-        url: "https://mirzacdns3.s3.ap-south-1.amazonaws.com/cache/catalog/RLV0015/2-800x800.jpg",
-      },
-    ],
-    shop: {
-      name: "Alisha Shoes Mart",
-      shop_avatar: {
-        public_id: "test",
-        url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
-      },
-      ratings: 4.2,
-    },
-    price: 120,
-    Classify: ["Gold", "Deep Purple", "Silver", "Space_Black"],
-    discount_price: 89,
-    rating: 5,
-    total_sell: 49,
-    stock: 10,
-    category: "Shoes",
-    city: "Thaibinh"
-  },
+    //     url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
+    //     ratings: 4.2,
+    //   },
+    //   originalPrice: 300,
+    //   discountPrice: 239,
 
+    //   Classify: ["Gold", "Deep Purple", "Silver", "Space_Black", "Blue", "Pink", "Gray"],
+    //   Capacity: ["128GB", "516GB", "1TB"],
+    //   rating: 4.5,
+    //   reviews: [
+    //     {
+    //       user: {
+    //         // user object will be here
+    //       },
+    //       comment: "IT's so cool!",
+    //       rating: 5,
+    //     },
+    //   ],
+    //   sold_out: 20,
+    //   stock: 10,
+    //   city: "Caobang"
+    // },
+    // {
+    //   id: 10,
+    //   category: "Music and Gaming",
+    //   name: "Gaming Headphone Asus with mutiple color and free delivery",
+    //   description:
+    //     "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+    //   images: [
+    //     'https://down-vn.img.susercontent.com/file/93b3f6d4799b06f9279f817540daa4d1',
+    //     'https://down-vn.img.susercontent.com/file/3af324bc17f502e8b1898fd5a2b01844',
+    //     'https://down-vn.img.susercontent.com/file/b7addff24c257ae552ee31f16a23af7c',
+    //     'https://down-vn.img.susercontent.com/file/198720e37eeccfcdc98c6ea87f5decaa',
+    //     'https://down-vn.img.susercontent.com/file/7bb6d3ae9b86f3d7a7b1ca0e48ec311a',
+    //     'https://down-vn.img.susercontent.com/file/bdda15455bac30f5bc2b404752bbe3ba',
+    //     'https://down-vn.img.susercontent.com/file/3aaade086d08751f776049fdc99f4c6e',
+    //     'https://down-vn.img.susercontent.com/file/c1b2e42986f73de8bedb2282e2687626',
+    //     'https://down-vn.img.susercontent.com/file/1a466d100fbb431996b49e10127cf383'
+    //   ],
+    //   capacities: [
+    //     {
+    //       name: "black",
+    //       url: "https://www.startech.com.bd/image/cache/catalog/headphone/havit/h763d/h763d-02-500x500.jpg",
+    //     },
+    //     {
+    //       name: "white",
+    //       url: "https://eratablet.com/wp-content/uploads/2022/08/H51ba6537405f4948972e293927673546u.jpg",
+    //     },
+    //   ],
+    //   shop: {
+    //     city: "Hanoi",
+    //     name: "Asus Ltd",
+
+    //     url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
+    //     ratings: 4.2,
+    //   },
+    //   originalPrice: 300,
+    //   discountPrice: 239,
+    //   Classify: ["Gold", "Deep Purple", "Silver", "Space_Black", "Blue", "Pink", "Gray"],
+    //   Capacity: ["128GB", "516GB", "1TB"],
+
+    //   rating: 4.5,
+    //   reviews: [
+    //     {
+    //       user: {
+    //         // user object will be here
+    //       },
+    //       comment: "IT's so cool!",
+    //       rating: 5,
+    //     },
+    //   ],
+    //   sold_out: 20,
+    //   stock: 10,
+    //   city: "Hanoi"
+    // },
+    // {
+    //   id: 7,
+    //   name: "New Fashionable Watch for men 2023 with multiple colors",
+    //   description:
+    //     "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+    //   images: [
+    //     'https://down-vn.img.susercontent.com/file/93b3f6d4799b06f9279f817540daa4d1',
+    //     'https://down-vn.img.susercontent.com/file/3af324bc17f502e8b1898fd5a2b01844',
+    //     'https://down-vn.img.susercontent.com/file/b7addff24c257ae552ee31f16a23af7c',
+    //     'https://down-vn.img.susercontent.com/file/198720e37eeccfcdc98c6ea87f5decaa',
+    //     'https://down-vn.img.susercontent.com/file/7bb6d3ae9b86f3d7a7b1ca0e48ec311a',
+    //     'https://down-vn.img.susercontent.com/file/bdda15455bac30f5bc2b404752bbe3ba',
+    //     'https://down-vn.img.susercontent.com/file/3aaade086d08751f776049fdc99f4c6e',
+    //     'https://down-vn.img.susercontent.com/file/c1b2e42986f73de8bedb2282e2687626',
+    //     'https://down-vn.img.susercontent.com/file/1a466d100fbb431996b49e10127cf383'
+    //   ],
+    //   capacities: [
+    //     {
+    //       name: "black",
+    //       url: "https://i0.wp.com/eccocibd.com/wp-content/uploads/2022/01/1802NL02_1.png?fit=550%2C550&ssl=1",
+    //     },
+    //     {
+    //       name: "white",
+    //       url: "https://i0.wp.com/eccocibd.com/wp-content/uploads/2022/01/1802NL02_1.png?fit=550%2C550&ssl=1",
+    //     },
+    //   ],
+    //   shop: {
+    //     city: "Hanoi",
+    //     name: "Shahriar Watch House",
+
+    //     url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
+    //     ratings: 2,
+    //   },
+    //   originalPrice: 100,
+    //   discountPrice: 79,
+    //   Classify: ["Gold", "Deep Purple", "Silver", "Space_Black", "Blue", "Pink", "Gray"],
+    //   Capacity: ["128GB", "516GB", "1TB"],
+    //   rating: 2,
+    //   sold_out: 62,
+    //   stock: 10,
+    //   city: "Sapa"
+    // },
+    // {
+    //   id: 6,
+    //   name: "Gaming Headphone Asus with mutiple color and free delivery",
+    //   description:
+    //     "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+    //   images: [
+    //     'https://down-vn.img.susercontent.com/file/93b3f6d4799b06f9279f817540daa4d1',
+    //     'https://down-vn.img.susercontent.com/file/3af324bc17f502e8b1898fd5a2b01844',
+    //     'https://down-vn.img.susercontent.com/file/b7addff24c257ae552ee31f16a23af7c',
+    //     'https://down-vn.img.susercontent.com/file/198720e37eeccfcdc98c6ea87f5decaa',
+    //     'https://down-vn.img.susercontent.com/file/7bb6d3ae9b86f3d7a7b1ca0e48ec311a',
+    //     'https://down-vn.img.susercontent.com/file/bdda15455bac30f5bc2b404752bbe3ba',
+    //     'https://down-vn.img.susercontent.com/file/3aaade086d08751f776049fdc99f4c6e',
+    //     'https://down-vn.img.susercontent.com/file/c1b2e42986f73de8bedb2282e2687626',
+    //     'https://down-vn.img.susercontent.com/file/1a466d100fbb431996b49e10127cf383'
+    //   ],
+    //   capacities: [
+    //     {
+    //       name: "black",
+    //       url: "https://www.startech.com.bd/image/cache/catalog/headphone/havit/h763d/h763d-02-500x500.jpg",
+    //     },
+    //     {
+    //       name: "white",
+    //       url: "https://eratablet.com/wp-content/uploads/2022/08/H51ba6537405f4948972e293927673546u.jpg",
+    //     },
+    //   ],
+    //   shop: {
+    //     city: "Hanoi",
+    //     name: "Asus Ltd",
+    //     avatar: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
+    //     ratings: 4.2,
+    //   },
+    //   originalPrice: 300,
+    //   discountPrice: 239,
+    //   Classify: ["Gold", "Deep Purple", "Silver", "Space_Black", "Blue", "Pink", "Gray"],
+    //   Capacity: ["128GB", "516GB", "1TB"],
+
+    //   rating: 4.5,
+    //   reviews: [
+    //     {
+    //       user: {
+    //         // user object will be here
+    //       },
+    //       comment: "IT's so cool!",
+    //       rating: 5,
+    //     },
+    //   ],
+    //   sold_out: 20,
+    //   stock: 10,
+    //   category: "Music and Gaming",
+    //   city: "Tp.HCM"
+    // },
+    // {
+    //   id: 1,
+    //   category: "Computers and Laptops",
+    //   name: "MacBook pro M2 chipset 256gb ssd 8gb ram space-gray color with apple 1 year warranty",
+    //   description:
+    //     "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+    //   images: [
+    //     'https://down-vn.img.susercontent.com/file/93b3f6d4799b06f9279f817540daa4d1',
+    //     'https://down-vn.img.susercontent.com/file/3af324bc17f502e8b1898fd5a2b01844',
+    //     'https://down-vn.img.susercontent.com/file/b7addff24c257ae552ee31f16a23af7c',
+    //     'https://down-vn.img.susercontent.com/file/198720e37eeccfcdc98c6ea87f5decaa',
+    //     'https://down-vn.img.susercontent.com/file/7bb6d3ae9b86f3d7a7b1ca0e48ec311a',
+    //     'https://down-vn.img.susercontent.com/file/bdda15455bac30f5bc2b404752bbe3ba',
+    //     'https://down-vn.img.susercontent.com/file/3aaade086d08751f776049fdc99f4c6e',
+    //     'https://down-vn.img.susercontent.com/file/c1b2e42986f73de8bedb2282e2687626',
+    //     'https://down-vn.img.susercontent.com/file/1a466d100fbb431996b49e10127cf383'
+    //   ],
+    //   capacities: [
+    //     {
+    //       name: "black",
+    //       url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
+    //     },
+    //     {
+    //       name: "white",
+    //       url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
+    //     },
+    //   ],
+    //   shop: {
+    //     city: "Hanoi",
+    //     name: "Apple inc.",
+
+    //     url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
+    //     ratings: 4.2,
+    //   },
+    //   originalPrice: 1099,
+    //   discountPrice: 1049,
+    //   Classify: ["Gold", "Deep Purple", "Silver", "Space_Black", "Blue", "Pink", "Gray"],
+    //   Capacity: ["128GB", "516GB", "1TB"],
+    //   rating: 4,
+    //   sold_out: 35,
+    //   stock: 10,
+    //   city: "hanoi"
+    // },
+    // {
+    //   id: 2,
+    //   category: "Mobile and Tablets",
+    //   name: "Iphone 14 pro max 256 gb ssd and 8 gb ram silver colour",
+    //   description:
+    //     "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+    //   images: [
+    //     'https://down-vn.img.susercontent.com/file/93b3f6d4799b06f9279f817540daa4d1',
+    //     'https://down-vn.img.susercontent.com/file/3af324bc17f502e8b1898fd5a2b01844',
+    //     'https://down-vn.img.susercontent.com/file/b7addff24c257ae552ee31f16a23af7c',
+    //     'https://down-vn.img.susercontent.com/file/198720e37eeccfcdc98c6ea87f5decaa',
+    //     'https://down-vn.img.susercontent.com/file/7bb6d3ae9b86f3d7a7b1ca0e48ec311a',
+    //     'https://down-vn.img.susercontent.com/file/bdda15455bac30f5bc2b404752bbe3ba',
+    //     'https://down-vn.img.susercontent.com/file/3aaade086d08751f776049fdc99f4c6e',
+    //     'https://down-vn.img.susercontent.com/file/c1b2e42986f73de8bedb2282e2687626',
+    //     'https://down-vn.img.susercontent.com/file/1a466d100fbb431996b49e10127cf383'
+    //   ],
+    //   capacities: [
+    //     {
+    //       name: "black",
+    //       url: "https://m.media-amazon.com/images/I/31Vle5fVdaL.jpg",
+    //     },
+    //     {
+    //       name: "white",
+    //       url: "https://m.media-amazon.com/images/I/31Vle5fVdaL.jpg",
+    //     },
+    //   ],
+    //   shop: {
+    //     city: "Hanoi",
+    //     name: "Amazon Ltd",
+
+    //     url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
+    //     ratings: 4.2,
+    //   },
+    //   discountPrice: 1099,
+    //   rating: 5,
+    //   Classify: ["Gold", "Deep Purple", "Silver", "Space_Black", "Blue", "Green", "Pink", "Blue", "Green", "Pink", "Blue", "Green", "Pink"],
+    //   sold_out: 80,
+    //   stock: 10,
+    //   city: "Tp.HCM"
+    // },
+    // {
+    //   id: 3,
+    //   category: "Computers and Laptop",
+    //   name: "MacBook pro M2 chipset 256gb ssd 8gb ram space gray color with apple 1 year warranty",
+    //   description:
+    //     "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+    //   images: [
+    //     'https://down-vn.img.susercontent.com/file/93b3f6d4799b06f9279f817540daa4d1',
+    //     'https://down-vn.img.susercontent.com/file/3af324bc17f502e8b1898fd5a2b01844',
+    //     'https://down-vn.img.susercontent.com/file/b7addff24c257ae552ee31f16a23af7c',
+    //     'https://down-vn.img.susercontent.com/file/198720e37eeccfcdc98c6ea87f5decaa',
+    //     'https://down-vn.img.susercontent.com/file/7bb6d3ae9b86f3d7a7b1ca0e48ec311a',
+    //     'https://down-vn.img.susercontent.com/file/bdda15455bac30f5bc2b404752bbe3ba',
+    //     'https://down-vn.img.susercontent.com/file/3aaade086d08751f776049fdc99f4c6e',
+    //     'https://down-vn.img.susercontent.com/file/c1b2e42986f73de8bedb2282e2687626',
+    //     'https://down-vn.img.susercontent.com/file/1a466d100fbb431996b49e10127cf383'
+    //   ],
+    //   capacities: [
+    //     {
+    //       name: "black",
+    //       url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
+    //     },
+    //     {
+    //       name: "white",
+    //       url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
+    //     },
+    //   ],
+    //   shop: {
+    //     city: "Hanoi",
+    //     name: "Apple inc.",
+
+    //     url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
+    //     ratings: 4.2,
+    //   },
+    //   originalPrice: 1099,
+    //   discountPrice: 1049,
+    //   Classify: ["Gold", "Deep Purple", "Silver", "Space_Black", "Blue", "Pink", "Gray"],
+    //   Capacity: ["128GB", "516GB", "1TB"],
+
+    //   rating: 4,
+    //   sold_out: 75,
+    //   stock: 10,
+    //   city: "Danang"
+    // },
+    // {
+    //   id: 5,
+    //   category: "Shoes",
+    //   name: "New Trend shoes for gents with all sizes",
+    //   description:
+    //     "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+    //   images: [
+    //     'https://down-vn.img.susercontent.com/file/93b3f6d4799b06f9279f817540daa4d1',
+    //     'https://down-vn.img.susercontent.com/file/3af324bc17f502e8b1898fd5a2b01844',
+    //     'https://down-vn.img.susercontent.com/file/b7addff24c257ae552ee31f16a23af7c',
+    //     'https://down-vn.img.susercontent.com/file/198720e37eeccfcdc98c6ea87f5decaa',
+    //     'https://down-vn.img.susercontent.com/file/7bb6d3ae9b86f3d7a7b1ca0e48ec311a',
+    //     'https://down-vn.img.susercontent.com/file/bdda15455bac30f5bc2b404752bbe3ba',
+    //     'https://down-vn.img.susercontent.com/file/3aaade086d08751f776049fdc99f4c6e',
+    //     'https://down-vn.img.susercontent.com/file/c1b2e42986f73de8bedb2282e2687626',
+    //     'https://down-vn.img.susercontent.com/file/1a466d100fbb431996b49e10127cf383'
+    //   ],
+    //   capacities: [
+    //     {
+    //       name: "black",
+    //       url: "https://mirzacdns3.s3.ap-south-1.amazonaws.com/cache/catalog/RLV0015/2-800x800.jpg",
+    //     },
+    //     {
+    //       name: "white",
+    //       url: "https://mirzacdns3.s3.ap-south-1.amazonaws.com/cache/catalog/RLV0015/2-800x800.jpg",
+    //     },
+    //   ],
+    //   shop: {
+    //     city: "Hanoi",
+    //     name: "Alisha Shoes Mart",
+
+    //     url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
+    //     ratings: 4.2,
+    //   },
+    //   originalPrice: 120,
+    //   Classify: ["Gold", "Deep Purple", "Silver", "Space_Black", "Blue", "Pink", "Gray"],
+    //   Capacity: ["128GB", "516GB", "1TB"],
+    //   discountPrice: 89,
+    //   rating: 5,
+    //   sold_out: 49,
+    //   stock: 10,
+    //   city: "Thaibinh"
+    // },
+  }
 ];
 
 export const footerProductLinks = [
@@ -863,7 +1095,6 @@ export const footerProductLinks = [
     name: "Reviews",
   },
 ];
-
 export const footercompanyLinks = [
   {
     name: "Game & Video",
@@ -881,7 +1112,6 @@ export const footercompanyLinks = [
     name: "Events",
   },
 ];
-
 export const footerSupportLinks = [
   {
     name: "FAQ",
@@ -953,4 +1183,196 @@ export const faqs = [
     question: "What payment methods do you accept?",
     answer: "We accept visa,mastercard,paypal payment method also we have cash on delivery system."
   },
+]
+export const citys = [
+  { city: 'An Giang' },
+  { city: 'Bà Rịa – Vũng Tàu' },
+  { city: 'Bắc Giang' },
+  { city: 'Bắc Kạn' },
+  { city: 'Bạc Liêu' },
+  { city: 'Bắc Ninh' },
+  { city: 'Bến Tre' },
+  { city: 'Bình Định' },
+  { city: 'Bình Dương' },
+  { city: 'Bình Phước' },
+  { city: 'Bình Thuận' },
+  { city: 'Cà Mau' },
+  { city: 'Cần Thơ' },
+  { city: 'Cao Bằng' },
+  { city: 'Đà Nẵng' },
+  { city: 'Đắk Lắk' },
+  { city: 'Đắk Nông' },
+  { city: 'Điện Biên' },
+  { city: 'Đồng Nai' },
+  { city: 'Đồng Tháp' },
+  { city: 'Gia Lai' },
+  { city: 'Hà Giang' },
+  { city: 'Hà Nam' },
+  { city: 'Hà Nội' },
+  { city: 'Hà Tĩnh' },
+  { city: 'Hải Dương' },
+  { city: 'Hải Phòng' },
+  { city: 'Hậu Giang' },
+  { city: 'Hòa Bình' },
+  { city: 'Hưng Yên' },
+  { city: 'Khánh Hòa' },
+  { city: 'Kiên Giang' },
+  { city: 'Kon Tum' },
+  { city: 'Lai Châu' },
+  { city: 'Lâm Đồng' },
+  { city: 'Lạng Sơn' },
+  { city: 'Lào Cai' },
+  { city: 'Long An' },
+  { city: 'Nam Định' },
+  { city: 'Nghệ An' },
+  { city: 'Ninh Bình' },
+  { city: 'Ninh Thuận' },
+  { city: 'Phú Thọ' },
+  { city: 'Phú Yên' },
+  { city: 'Quảng Bình' },
+  { city: 'Quảng Nam' },
+  { city: 'Quảng Ngãi' },
+  { city: 'Quảng Ninh' },
+  { city: 'Quảng Trị' },
+  { city: 'Sóc Trăng' },
+  { city: 'Sơn La' },
+  { city: 'Tây Ninh' },
+  { city: 'Thái Bình' },
+  { city: 'Thái Nguyên' },
+  { city: 'Thanh Hóa' },
+  { city: 'Thừa Thiên Huế' },
+  { city: 'Tiền Giang' },
+  { city: 'TP Hồ Chí Minh' },
+  { city: 'Trà Vinh' },
+  { city: 'Tuyên Quang' },
+  { city: 'Vĩnh Long' },
+  { city: 'Vĩnh Phúc' },
+  { city: 'Yên Bái' }
+]
+export const addressData = [
+  {
+    city: 'Hà Nội',
+    district: ["Quận Ba Đình",
+      "Quận Hoàn Kiếm",
+      "Quận Tây Hồ,",
+      "Quận Long Biên",
+      "Quận Cầu Giấy",
+      "Quận Đống Đa",
+      "Quận Hai Bà Trưng",
+      "Quận Hoàng Mai",
+      "Quận Thanh Xuân",
+      "Huyện Sóc Sơn",
+      "Huyện Đông Anh",
+      "Huyện Gia Lâm",
+      "Quận Nam Từ Liêm",
+      "Huyện Thanh Trì",
+      "Quận Bắc Từ Liêm",
+      "Huyện Mê Linh",
+      "Quận Hà Đông",
+      "Thị xã Sơn Tây",
+      "Huyện Ba Vì,",
+      "Huyện Phúc Thọ",
+      "Huyện Đan Phượng",
+      "Huyện Hoài Đức",
+      "Huyện Quốc Oai",
+      "Huyện Thạch Thất",
+      "Huyện Chương Mỹ",
+      "Huyện Thanh Oai",
+      "Huyện Thường Tín",
+      "Huyện Phú Xuyên",
+      "Huyện Ứng Hòa",
+      "Huyện Mỹ Đức",]
+  },
+  {
+    city: 'TP HCM',
+    district: ["Quận 1",
+      "Quận 12",
+      "Quận Thủ Đức",
+      "Quận 9",
+      "Quận Gò Vấp",
+      "Quận Bình Thạnh",
+      "Quận Tân Bình",
+      "Quận Tân Phú",
+      "Quận Phú Nhuận",
+      "Quận 2",
+      "Quận 3",
+      "Quận 10",
+      "Quận 11",
+      "Quận 4",
+      "Quận 5",
+      "Quận 6",
+      "Quận 8",
+      "Quận Bình Tân",
+      "Quận 7",
+      "Huyện Củ Chi",
+      "Huyện Hóc Môn",
+      "Huyện Bình Chánh",
+      "Huyện Nhà Bè",
+      "Huyện Cần Giờ",]
+  },
+  {
+    city: 'Hà Giang',
+    district: ["Thành phố Hà Giang",
+      "Huyện Đồng Văn",
+      "Huyện Mèo Vạc",
+      "Huyện Yên Minh",
+      "Huyện Quản Bạ",
+      "Huyện Vị Xuyên",
+      "Huyện Bắc Mê",
+      "Huyện Hoàng Su Phì",
+      "Huyện Xín Mần",
+      "Huyện Bắc Quang",
+      "Huyện Quang Bình",]
+  },
+  {
+    city: 'Cao Bằng',
+    district: [
+      'Thành phố Cao Bằng',
+      'Huyện Bảo Lâm',
+      'Huyện Bảo Lạc',
+      'Huyện Thông Nông',
+      'Huyện Hà Quảng',
+      'Huyện Trà Lĩnh',
+      'Huyện Trùng Khánh',
+      'Huyện Hạ Lang',
+      'Huyện Quảng Uyên',
+      'Huyện Phục Hoà',
+      'Huyện Hoà An',
+      'Huyện Nguyên Bình',
+      'Huyện Thạch An']
+  },
+  {
+    city: 'Bắc Kạn',
+    district: [
+      'Thành Phố Bắc Kạn',
+      'Huyện Pác Nặm',
+      'Huyện Ba Bể',
+      'Huyện Ngân Sơn',
+      'Huyện Bạch Thông',
+      'Huyện Chợ Đồn',
+      'Huyện Chợ Mới',
+      'Huyện Na Rì',]
+  },
+  {
+    city: 'Tuyên Quang',
+    district: ["Thành phố Tuyên Quang",
+      "Huyện Lâm Bình",
+      "Huyện Nà Hang",
+      "Huyện Chiêm Hóa",
+      "Huyện Hàm Yên",
+      "Huyện Yên Sơn",
+      "Huyện Sơn Dương",]
+  },
+  {
+    city: 'Lào cai',
+    district: ["Huyện Bát Xát",
+      "Thành phố Lào Cai",
+      "Huyện Mường Khương",
+      "Huyện Si Ma Cai",
+      "Huyện Bắc Hà",
+      "Huyện Bảo Thắng",
+      "Huyện Bảo Yên",
+      "Huyện Sa Pa",
+      "Huyện Văn Bàn",]
+  }
 ]

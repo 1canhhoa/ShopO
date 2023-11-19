@@ -1,20 +1,30 @@
-import React from 'react'
-import Hero from '~/components/Hero'
-import Categories from '~/components/Categories'
-import Bestdeal from '~/components/Bestdeal'
-import FeatureProduct from '~/components/FeatureProduct'
+
+import Hero from '~/components/Home/Hero'
+import Categories from '~/components/Home/Categories'
+import Bestdeal from '~/components/Home/Bestdeal'
+import FeatureProduct from '~/components/Home/FeatureProduct'
 import Events from '~/components/Events/Events'
-import Sponsored from '~/components/Sponsored'
-import Footer from '~/layouts/components/Footer'
+import Sponsored from '~/components/Home/Sponsored'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { ActionGetAllProduct } from '~/Redux/actions/product'
+import { ActionGetAllEvent } from '~/Redux/actions/event'
+import PayPal from '~/components/Checkout/Paypal'
 function Home() {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(ActionGetAllProduct())
+    dispatch(ActionGetAllEvent())
+  }, [])
   return (
     <div className=' bg-bgr-page pb-20'>
       <Hero />
       <Categories />
       <Bestdeal />
-      <FeatureProduct />
+      <FeatureProduct />{/* productCard */}
       <Events />
       <Sponsored />
+      <PayPal />
     </div>
 
   )

@@ -24,7 +24,7 @@ const CountDown = ({ data }) => {
   // calculate trả ra một object
   function calculateTimeLeft() {
     // const year = new Date().getFullYear();
-    const difference = +new Date(`2023-9-14`) - +new Date();
+    const difference = +new Date(data.end_date) - +new Date();
     let timeLeft = {};
     if (difference > 0) {
       timeLeft = {

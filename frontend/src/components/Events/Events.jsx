@@ -1,11 +1,10 @@
 
 // import { useSelector } from 'react-redux';
 import EventCard from "./EventCard";
-
+import { useSelector } from "react-redux";
 const Events = () => {
-  // const { allEvents, isLoading } = useSelector((state) => state.events);
-  // const isLoading = ''
-  // const allEvents = [1, 1, 1]
+  const { allEvent } = useSelector(state => state.event)
+  console.log('allEvent', allEvent);
   return (
     <div>
       {/* {
@@ -15,9 +14,10 @@ const Events = () => {
           <h1>Popular Events</h1>
         </div>
         <div className="w-full grid">
-          <EventCard />
-          {/* {allEvents.length !== 0 && (<EventCard data={allEvents && allEvents[0]} />)}
-              <h4>{allEvents?.length === 0 && ('No Events have!')}</h4> */}
+          {allEvent?.map((a, i) => (
+            <EventCard key={i} data={a} />
+          ))}
+          {!allEvent && <div className="py-8 text-xl text-red-400">không có sự kiện nào ở đây</div>}
         </div>
 
       </div>

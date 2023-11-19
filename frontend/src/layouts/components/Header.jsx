@@ -1,27 +1,41 @@
 import { Link } from "react-router-dom";
 import {
-  LogoApp, ChevronBottom, LoadingIcon, LoveIcon, BagIcon, ProfileIcon, DeleteSearchIcon, AllCategoryIcon, ChevronRight, MenuCategoriesIcon
-} from '~/Assests/svg'
-import { IoIosLogIn } from 'react-icons/io'
-import { CiUser } from 'react-icons/ci'
-import Image from "~/components/Image";
-import image from "~/Assests/images";
+  LogoApp, ChevronBottom, DeleteSearchIcon, AllCategoryIcon, ChevronRight, MenuCategoriesIcon
+} from '~/Assests/svg.jsx'
+import { FiLogIn } from 'react-icons/fi'
 import { useState, useRef, useEffect } from "react";
-import { categoriesData, navItems, productData } from '~/static/data'
+import { categoriesData, navItems, navItems2, productData } from '~/static/data'
 import DropDownMenu from './DropDownMenu.jsx'
 import NavItem from "./NavItem.jsx"
+import NavItem2 from "./NavItem2.jsx"
+import Header1 from "./Header1.jsx";
 import { useSelector } from "react-redux";
+import { AiOutlineShoppingCart } from 'react-icons/ai'
+import SearchData from "./SearchData.jsx";
+import CategoriesMobileHeader from "./CategoriesMobileHeader.jsx";
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/themes/light.css';// bg all
+import 'tippy.js/themes/light-border.css'// border all
+import 'tippy.js/animations/perspective.css'//animation tippy
+import 'tippy.js/animations/shift-away.css'//animation từ trên xuống
+import 'tippy.js/animations/scale.css'//animation tippy
+
+
 function Header() {
+  const { allCarts } = useSelector(state => state.cart)
+  const { products } = useSelector(state => state.product)
   const { isAuthenticated, user, loading } = useSelector(state => state.user)
+  const { isAuthenticatedSeller, seller, loadingSeller } = useSelector(state => state.seller)
   const [search, setSearch] = useState('')
   const [searchData, setSearchData] = useState(null);
   const [dropDown, setDropDown] = useState(false)
   const [active, setActive] = useState(false);
   const inputRef = useRef()
-  console.log("user", user);
-  useEffect(() => {
-    // window.location.reload()
-  }, [user])
+
+
+
+
   window.addEventListener("scroll", () => {
     if (window.scrollY > 130) {
       setActive(true);
@@ -38,154 +52,171 @@ function Header() {
     const term = e.target.value;
     setSearch(term)
     const filteredProducts =
-      productData &&
-      productData.filter((product) =>
+      products?.filter((product) =>
         product.name.toLowerCase().includes(term.toLowerCase())
       );
-    setSearchData(filteredProducts);
+    if (!term) setSearchData('')
+    else setSearchData(filteredProducts);
   }
+  // Xử lý sự kiện khi click bên ngoài
+  // const ref = useRef(null);
+  // useEffect(() => {
+  //   console.log("click outside");
+  //   function handleClickOutside(event) {
+  //     if (ref.current && !ref.current.contains(event.target)) {
+  //       setDropDown(false)
+  //     }
+  //   }
+  //   document.addEventListener('mousedown', handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener('mousedown', handleClickOutside);
+  //   };
+  // }, [setDropDown]);
   return (
     <>
       {
-        loading ? null : <header className="mx-auto">
-          {/* HEADER 1 */}
-          <div className="w-full border-b-[1px] border-[#efefef]">
-            <div className="px-[24px] mx-auto max-w-[1216px] h-[40px] ">
-              <div className="flex items-center h-full w-full text-[12px] font-medium justify-between ">
-                <div className="flex gap-4">
-                  <Link to={"/account"}>Account</Link>
-                  <Link to={"/track-oder"}>Track Order</Link>
-                  <Link to={"/support"}>Support</Link>
-                </div>
-                <div className="hidden sm:flex gap-4">
-                  <div className="flex items-center ">
-                    <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/1200px-Flag_of_Vietnam.svg.png" alt="" fallback={image.fallbackLogo} className='h-5 w-5 rounded-full object-cover' />
-                    <button className="pl-1">VietNam</button>
-                    <div className="pt-[2px]">
-                      <ChevronBottom className='h-4 w-4' />
-                    </div>
-                  </div>
-                  <div className="flex items-center">
-                    <button className="">VND</button>
-                    <div className="pt-[2px]">
-                      <ChevronBottom className='h-4 w-4' />
-                    </div>
-                  </div>
-                  <div className="flex items-center">
-                    <button className="">VnVip</button>
-                    <div className="pt-[2px]">
-                      <ChevronBottom className='h-4 w-4' />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        loading && loadingSeller ?
+          <div className="fixed w-full h-screen top-0 left-0 bg-red-600 z-50">
+            toheheheheheheh
           </div>
-          {/* HEADER 2 */}
-          <div className="w-full">
-            <div className="px-[24px] max-w-[1216px] mx-auto border-b-[1px] border-[#efefef]">
-              <div className="flex items-center justify-between w-full min-h-[62px] lg:min-h-[90px]">
-                <button className="block lg:hidden">
-                  <MenuCategoriesIcon />
-                </button>
-                <div className="">
-                  <Link to="/">
-                    {/* <img
-                    // src="https://shopo.quomodothemes.website/assets/images/logo.svg"
-                    src={<LogoApp />}
-                    alt=""
-                  /> */}
-                    <LogoApp color='bg-shop_main' />
-                  </Link>
-                </div>
-                <div className="hidden lg:block search w-[500px] h-[42px]">
-                  <form action="" className="flex h-full w-full  border-[1px] focus-within:border-[#d0cfcf] border-border-blur">
-                    <div className=" flex items-center w-full h-full">
-                      <input value={search} ref={inputRef} className="placeholder:text-sm pl-4 w-full h-[50%] outline-none" onChange={handleInputChange} type="text" placeholder="Search product..." />
-                      {search && <button onClick={handleDeleteSearch} className="mr-2">
-                        <DeleteSearchIcon />
-                      </button>}
-                    </div>
-                    <button className="bg-shop_main px-6 font-medium">Search</button>
-                  </form>
-                  {searchData && searchData.length !== 0 ? (
-                    <div className="absolute min-h-[30vh] w-[500px] bg-slate-50 shadow-sm-2 z-[9] p-4">
-                      {searchData &&
-                        searchData.map((i, index) => {
-                          // "\s" : là dấu cách ( ) 
-                          // "\s+" : là dấu cách (nhiều dấu cách liền nhau sẽ coi là 1 dấu ) 
-                          const product_name = i.name.replace(/\s+/g, "-")
-                          return (
-                            <Link key={index} to={`/product/${product_name}`}>
-                              <div className="w-full flex items-start-py-3">
-                                <img
-                                  src={`${i.image_Url[0]?.url}`}
-                                  alt=""
-                                  className="w-[40px] h-[40px] mr-[10px]"
-                                />
-                                <h1>{i.name}</h1>
-                              </div>
-                            </Link>
-                          );
-                        })}
-                    </div>
-                  ) : null}
-                </div>
-                <div className="flex justify-center items-center gap-5">
-                  <div className="relative hidden lg:block">
-                    <button><LoadingIcon /></button>
-                    <span className="absolute flex justify-center items-center w-[18px] h-[18px] -top-2.5 -right-2.5 text-[9px] bg-shop_main rounded-full">1</span>
+          : <header className="mx-auto relative">
+            <Header1 />
+            {/* HEADER 2 */}
+            <div className="w-full">
+              <div className="px-[24px] max-w-[1216px] mx-auto border-b-[1px] border-[#efefef]">
+                <div className="flex items-center justify-between w-full min-h-[62px] lg:min-h-[90px]">
+                  {/* when responsive */}
+                  <CategoriesMobileHeader />
+                  {/* Logo App */}
+                  <div className="">
+                    <Link to="/">
+                      <LogoApp color='bg-shop_main' />
+                    </Link>
                   </div>
-                  <div className="relative hidden lg:block">
-                    <button><LoveIcon /></button>
-                    <span className="absolute flex justify-center items-center w-[18px] h-[18px] -top-2.5 -right-2.5 text-[9px] bg-shop_main rounded-full">1</span>
-                  </div>
-                  <div className="relative ">
-                    <button><BagIcon /></button>
-                    <span className="absolute flex justify-center items-center w-[18px] h-[18px] -top-2.5 -right-2.5 text-[9px] bg-shop_main rounded-full">1</span>
-                  </div>
-                  <div className="hidden lg:block">
-                    {isAuthenticated ? (
-                      <Link to='/profile'>
-                        <img src={`http://localhost:4000/${user.avatar}`} className='w-[30px] h-[30px] mb-2 rounded-full' />
-                      </Link>
-                    ) : (
-                      <Link to='/login'><IoIosLogIn className="mb-2" size={30} /></Link>
-                    )}
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div >
-          {/* HEADER 3 */}
-          <div className={"bg-shop_main w-full hidden lg:block " + (active ? "shadow-sm fixed top-0 left-0 z-50" : null)} >
-            <div className="px-[24px] mx-auto max-w-[1216px]">
-              <div className=" min-h-[60px] flex items-center justify-between">
-                {/* content-1 */}
-                <div className="flex gap-4 xl:gap-10 ">
-                  <div>
-                    <button onClick={() => setDropDown(!dropDown)} className="flex justify-between px-4 items-center mt-[4px] rounded-tr-lg rounded-tl-lg bg-white w-[270px] h-[54px]">
-                      <div className="flex justify-center items-center gap-2">
-                        <div><AllCategoryIcon /></div>
-                        <span className="text-sm font-semibold">All categories </span>
+                  {/* Search */}
+                  <div className="hidden lg:block relative w-[500px] h-[42px]">
+                    <form action="" className="flex h-full w-full  border-[1px] focus-within:border-[#d0cfcf] border-border-blur">
+                      <div className=" flex items-center w-full h-full">
+                        <input value={search} name="search" ref={inputRef} className="placeholder:text-sm pl-4 w-full h-[50%] outline-none" onChange={handleInputChange} type="text" placeholder="Search product..." />
+                        {search && <button onClick={handleDeleteSearch} className="mr-2">
+                          <DeleteSearchIcon />
+                        </button>}
                       </div>
-                      <div><ChevronBottom className='w-4 h-4' /></div>
-                    </button>
-                    {dropDown && <DropDownMenu categoriesData={categoriesData} setDropDown={setDropDown} />}
+                      <button className="bg-shop_main px-6 font-medium">Search</button>
+                    </form>
+                    <SearchData searchData={searchData} search={search} />
                   </div>
-                  <NavItem navItems={navItems} />
-                </div>
-                {/* content-2 */}
-                <div className="flex bg-black w-[160px] h-[40px] justify-center items-center">
-                  <button className=" text-sm text-white font-semibold">Become a Seller</button>
-                  <div><ChevronRight className="text-white w-5 h-5" /></div>
+                  {/* Shopping cart */}
+                  <div className="flex justify-center items-center gap-3">
+                    <div className="relative flex justify-center items-center ">
+                      <Tippy
+                        animation={'perspective'}
+                        theme="notification"
+                        interactive
+                        delay={[50, 50]}
+                        placement="bottom-end"
+                        offset={[10, 20]} //dich sang [trai,tren]
+                        content={
+                          isAuthenticated ?
+                            <div className="w-max rounded-md py-4">
+                              <span className="text-slate-500 pl-2">New Products Added</span>
+                              {allCarts?.slice(0, 5).map(a => {
+                                const p = a?.product
+                                return (
+                                  <Link
+                                    key={p._id}
+                                    to={{ pathname: `/product/${p?.name}` }}
+                                    state={{ nameShop: p?.shop?.name }}//gửi qua ProductDetails
+                                    reloadDocument
+                                  >
+                                    <div className="flex px-4 py-2 hover:bg-slate-200 w-full items-center justify-start">
+                                      <img src={`http://localhost:4000/${p?.capacities[1]?.url}`} className="w-[40px] border-[1px] border-slate-200 h-[40px] object-contain" alt="" />
+                                      <div className="font-normal ml-2 w-full flex justify-between items-center ">
+                                        <span className="text-black mr-16">{p.name.length > 18 ? p.name.slice(0, 38) + ' ...' : p.name}</span>
+                                        <span className="text-red-600 text-end">{p.originalPrice || p.discountPrice}$</span>
+                                      </div>
+                                    </div>
+                                  </Link>
+                                )
+                              })}
+                              <div className="w-full text-end">
+                                <Link to='/cart'>
+                                  <button className=" h-max p-2 mt-4 hover:bg-opacity-90 rounded-md w-max bg-red-400 text-white mr-4" >
+                                    View cart added
+                                  </button>
+                                </Link>
+                              </div>
+                            </div>
+                            :
+                            <div className="w-[400px] h-[250px] flex flex-col justify-center items-center ">
+                              <LogoApp width='100' height='20' color='bg-shop_main' />
+                              <span className="font-light text-base">you need to login</span>
+                            </div>
+                        }
+                      >
+                        <button className="" >
+                          <Link to={isAuthenticated ? '/cart' : '/login'}>
+                            <AiOutlineShoppingCart size={30} />
+                          </Link>
+                        </button>
+                      </Tippy>
+
+                      {isAuthenticated && <span className="absolute flex justify-center items-center w-[18px] h-[18px] -top-2.5 -right-2.5 text-[9px] bg-shop_main rounded-full">{allCarts?.length}</span>}
+                    </div>
+                    <div className="">
+                      {!isAuthenticated && <Link to='/login'><FiLogIn className="" size={25} /></Link>}
+                    </div>
+                  </div>
+
                 </div>
               </div>
+            </div >
+            {/* HEADER 3 */}
+            <div className="h-[60px] w-full">
+              <div className={"bg-shop_main h-[60px] w-full hidden lg:block " + (active ? "shadow-sm fixed top-0 left-0 z-40" : null)} >
+                <div className="px-[24px] mx-auto max-w-[1216px]">
+                  <div className=" min-h-[60px] flex items-center justify-between">
+                    {/* content-1 */}
+                    <div className="flex gap-10 xl:gap-10 ">
+                      <div>
+                        <button onMouseEnter={() => setDropDown(true)}
+                          onMouseLeave={() => setDropDown(!dropDown)}
+                          className="flex justify-between px-4 items-center mt-[4px] rounded-tr-lg rounded-tl-lg bg-white w-[270px] h-[54px]">
+                          <div className="flex justify-center items-center gap-2">
+                            <div><AllCategoryIcon /></div>
+                            <span className="text-sm font-semibold">All categories </span>
+                          </div>
+                          <div><ChevronBottom className='w-4 h-4' /></div>
+                        </button>
+                        <DropDownMenu dropDown={dropDown} setDropDown={setDropDown} categoriesData={categoriesData} />
+                      </div>
+                      <NavItem navItems={navItems} />
+                      <NavItem2 navItems={navItems2} />
+                    </div>
+                    {/* content-2 */}
+                    <div className="flex bg-black w-[160px] h-[40px] justify-center items-center">
+                      {(() => {
+                        if (!isAuthenticated) {
+                          return (
+                            <Link to='/login'><button className=" text-sm text-white font-semibold">Become a Seller</button></Link>
+                          )
+                        } else if (!isAuthenticatedSeller) {
+                          return (
+                            <Link to='/seller/form'><button className=" text-sm text-white font-semibold">Become a Seller</button></Link>
+                          )
+                        } else if (isAuthenticatedSeller) {
+                          return (
+                            <Link to={`/dashboard/overview/${seller.name}`}><button className=" text-sm text-white font-semibold">Your Shop</button></Link>
+                          )
+                        }
+                      })()}
+                      <div><ChevronRight className="text-white w-5 h-5" /></div>
+                    </div>
+                  </div>
+                </div>
+              </div >
             </div>
-          </div >
-
-        </header >
+          </header >
       }
     </>
   )
