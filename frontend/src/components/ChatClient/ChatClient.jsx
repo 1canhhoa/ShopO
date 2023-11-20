@@ -125,7 +125,7 @@ const ChatClient = () => {
       const scrollHeight = lastMessage.offsetTop + lastMessage.offsetHeight;
       scrollContainer.scrollTo({ top: scrollHeight, behavior: "smooth" });
     }
-  }, [conversations?.length, messages, user]);
+  }, [conversations, messages, user]);
 
   // SOCKET SOCKET
   useEffect(() => {

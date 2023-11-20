@@ -83,13 +83,13 @@ const DashBoardMessages = props => {
   }, [scroll]);
   const scrollRef = useRef(null);
   useEffect(() => {
-    if (seller && conversations.length > 0) {
+    if (seller && conversations?.length > 0) {
       const scrollContainer = scrollRef.current;
       const lastMessage = scrollContainer.lastElementChild;
       const scrollHeight = lastMessage.offsetTop + lastMessage.offsetHeight;
       scrollContainer.scrollTo({ top: scrollHeight, behavior: "smooth" });
     }
-  }, [conversations.length, messages, seller]);
+  }, [conversations, messages, seller]);
   // SOCKET SOCKET
   useEffect(() => {
     socketId.on("getMessage", (data) => {
