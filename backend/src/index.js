@@ -37,6 +37,12 @@ app.use(cors(corsConfig));
 app.options('*', cors(corsConfig));
 app.use(express.static(path.join(__dirname,'../uploads')));
 app.use(express.static(path.join(__dirname,'../frontend/src/Assests')));
+app.use((req, res, next) => {
+  if (req.url.endsWith('.js')) {
+    res.set('Content-Type', 'application/javascript');
+  }
+  next();
+});
 userRoute(app)
 shopRoute(app)
 eventRoute(app)
@@ -47,6 +53,7 @@ addressRoute(app)
 orderRoute(app)
 conversationRoute(app)
 messagesRoute(app)
+
 app.use(function (err, req, res, next) {
   console.error(err);
   res.status(err.statusCode || 500).json(err.message);
