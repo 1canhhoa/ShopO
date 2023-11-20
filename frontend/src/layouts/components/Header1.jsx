@@ -16,6 +16,7 @@ import 'tippy.js/animations/shift-toward.css'//animation tippy
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { server } from "~/contants/contant";
 
 const Header1 = () => {
   const { isAuthenticated, user } = useSelector(state => state.user)
@@ -92,7 +93,7 @@ const Header1 = () => {
                 }
               >
                 <Link to='/user/account/profile' className="th-fl">
-                  <img src={`http://localhost:4000/${user?.avatar}`} className='w-[20px] h-[20px] rounded-full' />
+                  <img src={`${server}/${user?.avatar}`} className='w-[20px] h-[20px] rounded-full' />
                   <span className="text-sm ml-1 font-normal">Nham Hien</span>
                 </Link>
               </Tippy>

@@ -6,12 +6,12 @@ import "swiper/css/pagination";
 import "swiper/css/free-mode";
 // import {  } from 'swiper/modules';
 import { FreeMode, Pagination, Navigation } from "swiper/modules";
-import SpaceCity1 from "~/assets/images/SpaceCity1.jpg";
-import SpaceCity5 from "~/assets/images/SpaceCity5.jpeg";
-import SpaceCity6 from "~/assets/images/SpaceCity6.jpeg";
-import SpaceCity7 from "~/assets/images/SpaceCity7.jpeg";
-import SpaceCity8 from "~/assets/images/SpaceCity8.jpeg";
-import SpaceCity9 from "~/assets/images/SpaceCity9.jpeg";
+import SpaceCity1 from "~/Assests/images/SpaceCity1.jpg";
+import SpaceCity5 from "~/Assests/images/SpaceCity5.jpeg";
+import SpaceCity6 from "~/Assests/images/SpaceCity6.jpeg";
+import SpaceCity7 from "~/Assests/images/SpaceCity7.jpeg";
+import SpaceCity8 from "~/Assests/images/SpaceCity8.jpeg";
+import SpaceCity9 from "~/Assests/images/SpaceCity9.jpeg";
 import {
   RxArrowTopRight,
   RxCrop,

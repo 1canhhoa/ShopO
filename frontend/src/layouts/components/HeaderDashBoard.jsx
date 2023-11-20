@@ -12,6 +12,7 @@ import 'tippy.js/animations/shift-away.css'//animation từ trên xuống
 import 'tippy.js/animations/scale.css'//animation tippyshift-toward
 import 'tippy.js/animations/shift-toward.css'//animation tippy
 import { useState } from "react";
+import { server } from '~/contants/contant'
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -84,7 +85,7 @@ const HeaderDashBoard = () => {
                 }
               >
                 <Link to='' className="th-fl">
-                  <img src={`http://localhost:4000/${seller?.avatar}`} className='w-[20px] object-contain h-[20px] rounded-full' />
+                  <img src={`${server}/${seller?.avatar}`} className='w-[20px] object-contain h-[20px] rounded-full' />
                   <span className="text-sm ml-1 font-normal">{seller.name}</span>
                 </Link>
               </Tippy>

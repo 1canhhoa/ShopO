@@ -10,7 +10,8 @@ import { BiMessageSquareDetail } from "react-icons/bi";
 import { HiOutlineReceiptRefund } from "react-icons/hi";
 import { useSelector } from "react-redux";
 import socketIO from 'socket.io-client'
-const ENDPOINT = 'http://localhost:4001/'
+import { socket } from "~/contants/contant";
+const ENDPOINT = socket
 const socketId = socketIO(ENDPOINT, { transports: ['websocket'] })
 const dashboardItems = [
   {

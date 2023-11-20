@@ -7,6 +7,7 @@ import { BiChevronDown } from 'react-icons/bi'
 import { productData } from '~/static/data'
 import { useNavigate } from 'react-router-dom'
 import Ratings from "./Ratings";
+import { server } from '~/contants/contant'
 import PropTypes from 'prop-types';
 import { toast, ToastContainer } from 'react-toastify'
 import Stack from '@mui/material/Stack';
@@ -25,7 +26,6 @@ import { ActionAddTocart, ActionClearCart } from '~/Redux/actions/cart'
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
 import { ActionCreateConversation } from '~/Redux/actions/chat'
-
 const ProductDetails = ({ data }) => {
   const { allCarts, message, error } = useSelector(state => state.cart)
   const { user } = useSelector(state => state.user)
@@ -102,16 +102,16 @@ const ProductDetails = ({ data }) => {
               () => {
                 if ((select === 0 && selectColor > -1) || (select && selectColor > -1) || (select === 0 && selectColor == -1) || (select && selectColor == -1)) {
                   return (
-                    <img id='image' src={`http://localhost:4000/${data?.images[select]}`} className=' h-[450px] ' alt='error1' />
+                    <img id='image' src={`${server}/${data?.images[select]}`} className=' h-[450px] ' alt='error1' />
                   )
                 }
                 else if (select === null && selectColor == -1) {
                   return (
-                    <img id='image' src={`http://localhost:4000/${data?.images[0]}`} className='h-[450px] ' alt='error3' />
+                    <img id='image' src={`${server}/${data?.images[0]}`} className='h-[450px] ' alt='error3' />
                   )
                 } else if (select === null && selectColor > -1) {
                   return (
-                    <img id='image' src={`http://localhost:4000/${data?.capacities[selectColor]?.url}`} className='h-[450px]' alt='error4' />
+                    <img id='image' src={`${server}/${data?.capacities[selectColor]?.url}`} className='h-[450px]' alt='error4' />
                   )
                 }
               }
@@ -121,7 +121,7 @@ const ProductDetails = ({ data }) => {
           <div className='pl-4 flex justify-start items-center gap-2 overflow-auto'>
             {data?.images?.map((d, i) => {
               return (
-                <img onMouseEnter={() => handleSelect(i)} key={i} src={`http://localhost:4000/${d}`} className={'w-[80px] h-[80px] border-[1px] ' + (select === i ? 'border-red-500 border-[2px]' : 'border-gray-300')} alt="" />
+                <img onMouseEnter={() => handleSelect(i)} key={i} src={`${server}/${d}`} className={'w-[80px] h-[80px] border-[1px] ' + (select === i ? 'border-red-500 border-[2px]' : 'border-gray-300')} alt="" />
               )
             })}
           </div>
@@ -433,7 +433,7 @@ const ProductDetailsInfo = ({ data }) => {
           <div className='absolute flex gap-4 pl-12 flex-col text-black justify-center items-start w-full h-full top-0 left-0'>
             {/* avatar*/}
             <div className='flex justify-between gap-4 text-black items-center'>
-              <Link to={`/view-shop/${data?.shop?.name}`}><img className='object-contain w-[80px] h-[80px] rounded-full border-[2px] border-gray-400' src={`http://localhost:4000/${data?.shop?.avatar}`} alt="" /></Link>
+              <Link to={`/view-shop/${data?.shop?.name}`}><img className='object-contain w-[80px] h-[80px] rounded-full border-[2px] border-gray-400' src={`${server}/${data?.shop?.avatar}`} alt="" /></Link>
               <div className=' flex flex-col'>
                 <Link ><span className=' text-lg '>{data?.shop?.name}</span></Link>
                 <span className='text-xs'>Join On {data?.shop?.createdAt?.slice(0, 10)}</span>
@@ -523,7 +523,7 @@ const ProductDetailsInfo = ({ data }) => {
             <div className='absolute flex gap-4 pl-12 flex-col text-black justify-center items-start w-full h-full top-0 left-0'>
               {/* avatar*/}
               <div className='flex justify-between gap-4 text-black items-center'>
-                <Link to={`/view-shop/${data?.shop?.name}`}><img className='object-contain w-[80px] h-[80px] rounded-full border-[2px] border-gray-400' src={`http://localhost:4000/${data?.shop?.avatar}`} alt="" /></Link>
+                <Link to={`/view-shop/${data?.shop?.name}`}><img className='object-contain w-[80px] h-[80px] rounded-full border-[2px] border-gray-400' src={`${server}/${data?.shop?.avatar}`} alt="" /></Link>
                 <div className=' flex flex-col'>
                   <Link ><span className=' text-lg '>{data?.shop?.name}</span></Link>
                   <span className='text-xs'>Join On {data?.shop?.createdAt?.slice(0, 10)}</span>

@@ -8,7 +8,8 @@ import axios from 'axios';
 import { format } from "timeago.js";
 import socketIO from 'socket.io-client'
 import { ActionUpdateLastMessage, ActionGetAllConversationBySeller } from '~/Redux/actions/chat';
-const ENDPOINT = 'http://localhost:4001/'
+import { server, socket } from '~/contants/contant';
+const ENDPOINT = socket
 const socketId = socketIO(ENDPOINT, { transports: ['websocket'] })
 const DashBoardMessages = props => {
   const { seller } = useSelector(state => state.seller)
@@ -210,7 +211,7 @@ const DashBoardMessages = props => {
           {/* recipient */}
           <div className='h-[8%] w-full border-b-[2px] border-gray-200 flex items-center justify-start px-4 gap-2'>
             <div className='relative'>
-              <img className='min-h-[40px] border-[1px] border-gray-400 min-w-[40px] w-[40px] h-[40px] rounded-full' src={`http://localhost:4000/${userChating?.avatar}`} alt="" />
+              <img className='min-h-[40px] border-[1px] border-gray-400 min-w-[40px] w-[40px] h-[40px] rounded-full' src={`${server}/${userChating?.avatar}`} alt="" />
               {!activeStatus && <span className='absolute bottom-0 right-0 p-1.5 border-[2px] border-white bg-gray-500 rounded-full'></span>}
               {activeStatus && <span className='absolute bottom-0 right-0 p-1.5 border-[2px] border-white bg-teal-500 rounded-full'></span>}
             </div>

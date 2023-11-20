@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import PropTypes from 'prop-types';
+import { server } from '~/contants/contant'
 import { productData } from "~/static/data";
 const EventCard = ({ active, data }) => {
   return (
@@ -11,7 +12,7 @@ const EventCard = ({ active, data }) => {
       className={`w-full block gap-4 bg-white rounded-lg ${active ? "unset" : "mb-12"} lg:flex p-2`}
     >
       <div className="w-full lg:-w[50%] m-auto">
-        <img src={`http://localhost:4000/${data.images[0]}`} alt="" />
+        <img src={`${server}/${data.images[0]}`} alt="" />
       </div>
       <div className="w-full lg:[w-50%] flex flex-col justify-center">
         <h2 className="text-[25px] font-[600] font-Roboto text-[#333]">{data.name}</h2>

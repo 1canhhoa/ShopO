@@ -9,6 +9,7 @@ import DropDownMenu from './DropDownMenu.jsx'
 import NavItem from "./NavItem.jsx"
 import NavItem2 from "./NavItem2.jsx"
 import Header1 from "./Header1.jsx";
+import { server } from '~/contants/contant'
 import { useSelector } from "react-redux";
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import SearchData from "./SearchData.jsx";
@@ -130,7 +131,7 @@ function Header() {
                                     reloadDocument
                                   >
                                     <div className="flex px-4 py-2 hover:bg-slate-200 w-full items-center justify-start">
-                                      <img src={`http://localhost:4000/${p?.capacities[1]?.url}`} className="w-[40px] border-[1px] border-slate-200 h-[40px] object-contain" alt="" />
+                                      <img src={`${server}/${p?.capacities[1]?.url}`} className="w-[40px] border-[1px] border-slate-200 h-[40px] object-contain" alt="" />
                                       <div className="font-normal ml-2 w-full flex justify-between items-center ">
                                         <span className="text-black mr-16">{p.name.length > 18 ? p.name.slice(0, 38) + ' ...' : p.name}</span>
                                         <span className="text-red-600 text-end">{p.originalPrice || p.discountPrice}$</span>

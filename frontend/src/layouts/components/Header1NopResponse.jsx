@@ -5,6 +5,7 @@ import image from "~/Assests/images";
 import { useSelector } from "react-redux";
 import { IoMdNotificationsOutline } from "react-icons/io"
 import { BiChevronDown } from 'react-icons/bi'
+import { server } from '~/contants/contant'
 import Tippy from "@tippyjs/react";
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/themes/light.css';// bg all
@@ -90,7 +91,7 @@ const Header1NopResponse = () => {
                 }
               >
                 <Link to='/user/account/profile' className="th-fl">
-                  <img src={`http://localhost:4000/${user?.avatar}`} className='w-[20px] h-[20px] rounded-full' />
+                  <img src={`${server}/${user?.avatar}`} className='w-[20px] h-[20px] rounded-full' />
                   <span className="text-sm ml-1 font-normal">Nham Hien</span>
                 </Link>
               </Tippy>

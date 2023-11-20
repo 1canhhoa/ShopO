@@ -8,6 +8,7 @@ import ProductCard from '~/components/Products/ProductCard'
 import { AiOutlinePlus, AiOutlineGift, AiOutlineUser, AiOutlineMessage, AiOutlineUsergroupDelete, AiOutlineStar } from 'react-icons/ai'
 import { FiUserCheck } from 'react-icons/fi'
 import { BsWechat } from 'react-icons/bs'
+import { server } from '~/contants/contant'
 import { ActionGetAllProductbyShopId, ActionGetAllProductbyShopName } from '~/Redux/actions/product';
 // we need prop isOwner cause it used at two page : user and shop  
 const DashBoardOverView = ({ isOwner }) => {
@@ -31,7 +32,7 @@ const DashBoardOverView = ({ isOwner }) => {
           <div className='absolute flex gap-4 pl-12 flex-col justify-center items-start w-full h-full top-0 left-0 bg-slate-700 bg-opacity-70'>
             {/* avatar*/}
             <div className='flex justify-between gap-4 text-white items-center'>
-              <img className='w-[80px] h-[80px] object-contain rounded-full border-[2px] border-gray-400' src={`http://localhost:4000/${seller?.avatar}`} alt="" />
+              <img className='w-[80px] h-[80px] object-contain rounded-full border-[2px] border-gray-400' src={`${server}/${seller?.avatar}`} alt="" />
               <div className=' flex flex-col'>
                 <span className=' text-lg '>{isOwner === false ? (shop?.name) : (seller?.name)}</span>
                 <span className='text-xs'>Join On {isOwner === false ? (shop?.createdAt?.slice(0, 10)) : (seller?.createdAt?.slice(0, 10))}</span>

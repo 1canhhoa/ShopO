@@ -7,9 +7,10 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { format } from "timeago.js";
 import { toast } from 'react-toastify';
+import { server, socket } from '~/contants/contant'
 
 import socketIO from 'socket.io-client'
-const ENDPOINT = 'http://localhost:4001/'
+const ENDPOINT = socket
 const socketId = socketIO(ENDPOINT, { transports: ['websocket'] })
 const ChatClientMenulists = ({
   data,
@@ -61,7 +62,7 @@ const ChatClientMenulists = ({
         + (active === number ? "bg-[#f5f5f5]" : "bg-white")
       }>
       <div className='relative'>
-        <img className='object-contain min-h-[30px] min-w-[30px] w-[30px] h-[30px] border-[1px] border-gray-400  rounded-full' src={`http://localhost:4000/${sellerInfo?.avatar}`} alt="" />
+        <img className='object-contain min-h-[30px] min-w-[30px] w-[30px] h-[30px] border-[1px] border-gray-400  rounded-full' src={`${server}/${sellerInfo?.avatar}`} alt="" />
         {!online && <span className='absolute bottom-0 right-0 p-1 border-[2px] border-white bg-gray-500 rounded-full'></span>}
         {online && <span className='absolute bottom-0 right-0 p-1 border-[2px] border-white bg-teal-500 rounded-full'></span>}
       </div>

@@ -129,7 +129,7 @@ const SellerForm = () => {
               }
             >
               <button className='th-fl gap-1'>
-                <img src={`http://localhost:4000/${user?.avatar}`} alt="" className='w-8 h-8 rounded-full' />
+                <img src={`${server}/${user?.avatar}`} alt="" className='w-8 h-8 rounded-full' />
                 <span className='font-normal'>Nham Hien</span>
                 <FiChevronDown />
               </button>

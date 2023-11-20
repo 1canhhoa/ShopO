@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { GoTriangleDown } from 'react-icons/go'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { useSelector } from 'react-redux'
+import { server } from '~/contants/contant'
 import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/themes/light.css';// bg all
@@ -163,7 +164,7 @@ const Cart = () => {
                             {/* checkbox */}
                             <input onChange={(e) => handleClickChecked(e, d)} checked={isCheck.includes(p._id)} id={p._id} type='checkbox' />
                             {/* Image */}
-                            <a className='w-[25%]  th-fl'><img src={`http://localhost:4000/${p.capacities[1].url}`} className='w-20 h-20 object-cover th-bdimg' alt="" /></a>
+                            <a className='w-[25%]  th-fl'><img src={`${server}/${p.capacities[1].url}`} className='w-20 h-20 object-cover th-bdimg' alt="" /></a>
                             {/* Name */}
                             <div className="w-[75%] flex gap-1 flex-col justify-start items-start text-sm font-normal">
                               <span>{p?.name?.length > 80 ? p?.name.slice(0, 50) + ' ...' : p?.name}</span>

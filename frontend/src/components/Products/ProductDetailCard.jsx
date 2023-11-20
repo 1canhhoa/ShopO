@@ -4,6 +4,7 @@ import PropTypes, { bool } from 'prop-types';
 import { AiFillStar, AiOutlineStar, AiOutlineMessage, AiOutlineShoppingCart, AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { PiHeartThin, PiHeartFill } from 'react-icons/pi'
 import Ratings from './Ratings';
+import { server } from '~/contants/contant'
 import { motion } from 'framer-motion'
 const ProductDetailCard = ({ setOpen, openabc, data, click, setClick }) => {
   const [count, setCount] = useState(1)
@@ -68,11 +69,11 @@ const ProductDetailCard = ({ setOpen, openabc, data, click, setClick }) => {
         <div className=' flex flex-col rounded-tl-2xl rounded-tr-2xl md:flex-row overflow-y-scroll h-full'>
           {/* column 1 */}
           <div className='th-border-test w-full z-40 md:h-full '>
-            <img src={`http://localhost:4000/${data.images[0]}`} alt="" className=' 2xl md:h-[65%] w-full th-border-test ' />
+            <img src={`${server}/${data.images[0]}`} alt="" className=' 2xl md:h-[65%] w-full th-border-test ' />
             <div className="m-2">
               {/* logo shop */}
               <div className='my-2 flex justify-start items-center'>
-                <img src={`http://localhost:4000/${data.shop.avatar}`} className='h-[40px] w-[40px] rounded-full' alt="" />
+                <img src={`${server}/${data.shop.avatar}`} className='h-[40px] w-[40px] rounded-full' alt="" />
                 <div className='ml-2 text-xs flex flex-col font-light text-shop_main'>
                   <div>{data.shop.name}</div>
                   <div className='text-black'>({5}) ratings</div>

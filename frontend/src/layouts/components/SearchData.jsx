@@ -11,6 +11,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Link } from 'react-router-dom'
+import { server } from '~/contants/contant'
 import InputAdornment from '@mui/material/InputAdornment';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/themes/light.css';// bg all
@@ -33,7 +34,7 @@ const SearchData = ({ searchData, search }) => {
               <Link key={index} reloadDocument to={`/product/${product_name}`}>
                 <div className="w-full hover:bg-[#38bdf8] flex justify-start items-center px-2 py-2">
                   <img
-                    src={`http://localhost:4000/${i.capacities[1]?.url}`}
+                    src={`${server}/${i.capacities[1]?.url}`}
                     alt=""
                     className="w-[40px] h-[40px] mr-[10px]"
                   />

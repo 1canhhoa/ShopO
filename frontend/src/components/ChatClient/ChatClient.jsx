@@ -7,11 +7,13 @@ import { FaFaceFlushed } from 'react-icons/fa6'
 import ChatClientMenulists from './ChatClientMenulists';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
+import { server } from '~/contants/contant'
 import { format } from "timeago.js";
 import noData from '~/Assests/images/noData.jpeg'
 import { ActionGetAllConversationByUser, ActionUpdateLastMessage } from '~/Redux/actions/chat';
 import socketIO from 'socket.io-client'
-const ENDPOINT = 'http://localhost:4001/'
+import { socket } from '~/contants/contant'
+const ENDPOINT = socket
 const socketId = socketIO(ENDPOINT, { transports: ['websocket'] })
 const ChatClient = () => {
 
@@ -261,7 +263,7 @@ const ChatClient = () => {
               {/* recipient */}
               <div className='h-[8%] w-full border-b-[2px] border-gray-100 flex items-center justify-start px-4 gap-2'>
                 <div className='relative'>
-                  <img className='object-contain min-h-[20px] border-[1px] border-gray-400 min-w-[20px] w-[30px] h-[30px] rounded-full' src={`http://localhost:4000/${userChating?.avatar}`} alt="" />
+                  <img className='object-contain min-h-[20px] border-[1px] border-gray-400 min-w-[20px] w-[30px] h-[30px] rounded-full' src={`${server}/${userChating?.avatar}`} alt="" />
                   {!activeStatus && <span className='absolute bottom-0 right-0 p-1 border-[2px] border-white bg-gray-500 rounded-full'></span>}
                   {activeStatus && <span className='absolute bottom-0 right-0 p-1 border-[2px] border-white bg-teal-500 rounded-full'></span>}
                 </div>

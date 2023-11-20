@@ -6,6 +6,7 @@ import { PiTruckDuotone } from 'react-icons/pi'
 import { ActionCreateConversation } from '~/Redux/actions/chat'
 import { ActionGetAllOrderByUser } from '~/Redux/actions/order'
 import noProduct from '~/Assests/images/noProducts.jpg'
+import { server } from '~/contants/contant'
 const ComponentPurchase = ({ active, menu }) => {
   const { allOrders, messageCreateOrder, errorCreateOrder, rs, rs1 } = useSelector(state => state.order)
   const { allCarts, checkedProductsId } = useSelector(state => state.cart)
@@ -75,7 +76,7 @@ const ComponentPurchase = ({ active, menu }) => {
                       return (
                         <div key={i} className='py-2 flex justify-between items-center' >
                           <div className="flex gap-3">
-                            <img className='w-20 h-20 object-cover rounded-sm' src={`http://localhost:4000/${prd?.avatar}`} alt="" />
+                            <img className='w-20 h-20 object-cover rounded-sm' src={`${server}/${prd?.avatar}`} alt="" />
                             <div className=" flex flex-col justify-center items-start gap-1">
                               <span className='font-medium'>{prd?.name}</span>
                               <span className='text-sm text-gray-500'>Variation: {a?.class + ','}{a?.capa}</span>

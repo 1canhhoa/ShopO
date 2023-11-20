@@ -7,6 +7,7 @@ import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { PiHeartThin, PiHeartFill, PiEyeLight, PiShoppingCartLight } from 'react-icons/pi'
 import { HandleRating } from '~/static/functions';
 import Ratings from './Ratings';
+import { server } from '~/contants/contant'
 import { toast } from 'react-toastify'
 import { ActionCreateOrderAndDeleteIncarts, ActionOrderClearState } from '~/Redux/actions/order'
 
@@ -24,7 +25,7 @@ function ProductCard({ data }) {
             to={{ pathname: `/product/${product_name}` }}
             state={{ nameShop: data.shop.name }}//gửi qua ProductDetails
             className=''>
-            <img src={`http://localhost:4000/${data.capacities[1].url}`} alt="" className='px-4 h-[190px] object-contain mx-auto' />
+            <img src={`${server}/${data.capacities[1].url}`} alt="" className='px-4 h-[190px] object-contain mx-auto' />
           </Link>
           {/* imfomation product */}
           <div className=' flex flex-col px-2 pt-2 pb-2 justify-start items-start'>

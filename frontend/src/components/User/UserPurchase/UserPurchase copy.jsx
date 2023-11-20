@@ -5,6 +5,7 @@ import { BsChatDots } from 'react-icons/bs'
 import { PiTruckDuotone } from 'react-icons/pi'
 import { ActionGetAllOrderByUser } from '~/Redux/actions/order'
 import ComponentPurchase from './componentPurchase'
+import { server } from '~/contants/contant'
 const UserPurchase = () => {
   const [active, setActive] = useState(0)
   const { allOrders, messageCreateOrder, errorCreateOrder, rs } = useSelector(state => state.order)
@@ -57,7 +58,7 @@ const UserPurchase = () => {
                 return (
                   <div key={i} className='py-2 flex justify-between items-center' >
                     <div className="flex gap-3">
-                      <img className='w-20 h-20 object-cover rounded-sm' src={`http://localhost:4000/${prd?.avatar}`} alt="" />
+                      <img className='w-20 h-20 object-cover rounded-sm' src={`${server}/${prd?.avatar}`} alt="" />
                       <div className=" flex flex-col justify-center items-start gap-1">
                         <span className='font-medium'>{prd?.name}</span>
                         <span className='text-sm text-gray-500'>Variation: {b?.class + ','}{b?.capa}</span>

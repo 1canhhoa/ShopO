@@ -12,6 +12,7 @@ import paypalImg from '~/Assests/images/paypal-img.png'
 import { ActionAllCheckedProduct } from '~/Redux/actions/cart'
 import PayPal from './PayPal'
 import axios from 'axios'
+import { server } from '~/contants/contant'
 import { redirect, useNavigate } from 'react-router-dom'
 import { ActionAnimateWhenCheckout, ActionCreateOrderAndDeleteIncarts, ActionOrderClearState } from '~/Redux/actions/order'
 import { toast } from 'react-toastify'
@@ -225,7 +226,7 @@ const Checkout = () => {
                     <div key={i} className='flex pb-6 pl-2 justify-between items-start'>
                       <div className='w-[60%] pr-8 justify-between flex  text-base font-medium '>
                         <div className='flex  w-[70%]'>
-                          <img className='w-8 h-8 mr-4 rounded-full object-cover border-[1px] border-gray-200' src={`http://localhost:4000/${prd?.capacities[1]?.url}`} alt="" />
+                          <img className='w-8 h-8 mr-4 rounded-full object-cover border-[1px] border-gray-200' src={`${server}/${prd?.capacities[1]?.url}`} alt="" />
                           <span className=''>{prd?.name}</span>
                         </div>
                         <div className='text-sm text-gray-500'>Variation: {prd?.capacities[b?.class]?.name},{prd?.capacities[b?.class]?.capacity[b?.capa]?.capacity}</div>

@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react'
 import { FiChevronDown } from 'react-icons/fi'
 import { Link, useNavigate, Navigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
+import { server } from "~/contants/contant";
 const ShopLogin = () => {
   const [password, setPassword] = useState('')
   const [email, setEmail] = useState('')
@@ -96,7 +97,7 @@ const ShopLogin = () => {
               }
             >
               <button className='th-fl gap-1'>
-                {user && <img src={`http://localhost:4000/${user?.avatar}`} alt="" className='w-8 h-8 rounded-full' />}
+                {user && <img src={`${server}/${user?.avatar}`} alt="" className='w-8 h-8 rounded-full' />}
                 {user && <span className='font-normal'>Nham Hien</span>}
                 {user && <FiChevronDown />}
               </button>

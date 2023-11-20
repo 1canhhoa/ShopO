@@ -15,11 +15,13 @@ import { ActionGetAllEvent } from './Redux/actions/event';
 import { ActionGetAllCart } from './Redux/actions/cart';
 import LoaderBig from './components/LoaderBig';
 import ChatClient from './components/ChatClient/ChatClient';
+import { server } from '~/contants/contant'
 // import './App.css'
 function App() {
   const dispatch = useDispatch()
   // const navigate = useNavigate()
-  axios.defaults.baseURL = 'http://localhost:4000'
+  // console.log("server", server);
+  axios.defaults.baseURL = server
   axios.defaults.withCredentials = true
   const { loading, user, isAthenticated } = useSelector(state => state.user)
   useEffect(() => {
