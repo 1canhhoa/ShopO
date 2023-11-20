@@ -16,6 +16,7 @@ const addressRoute =require('./routes/addressRoute')
 const orderRoute = require('./routes/orderRoute')
 const ErrorHandler = require('./utils/ErrorHandle')
 const conversationRoute = require('./routes/conversationRoute')
+const path = require('path')
 require('module-alias/register')
 
 const app = express()
@@ -34,7 +35,8 @@ app.use(bodyParser.urlencoded({extended:true,limit:"200mb"}))
 
 app.use(cors(corsConfig));
 app.options('*', cors(corsConfig));
-
+app.use(express.static(path.join(__dirname,'../uploads')));
+app.use(express.static(path.join(__dirname,'../frontend/src/Assests')));
 userRoute(app)
 shopRoute(app)
 eventRoute(app)

@@ -10,6 +10,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material/styles";
 import theme from "./Theme";
 import { StyledEngineProvider } from '@mui/material/styles';
+import './firebase/config.js'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <StyledEngineProvider injectFirst>

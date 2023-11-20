@@ -76,7 +76,7 @@ const Home = ({ data }) => {
   return (
     <div className="p-8 flex flex-col gap-4">
       {data?.map((a, i) => (
-        <div className="cursor-pointer text-gray-500 font-semibold hover:text-shop_main underline">{a?.name}</div>
+        <div key={i} className="cursor-pointer text-gray-500 font-semibold hover:text-shop_main underline">{a?.name}</div>
       ))}
     </div>
   )
@@ -86,11 +86,11 @@ const Shop = ({ data }) => {
   return (
     <div className="flex gap-[168px] p-6">
       {data?.map((a, i) => (
-        <div className="flex flex-col justify-start items-start gap-6">
+        <div key={i} className="flex flex-col justify-start items-start gap-6">
           <div className="font-semibold">{a?.name}</div>
           <div className="gap-2 flex flex-col text-gray-500 ">
             {a?.item.map((b, i) => (
-              <NavLink className="hover:text-shop_main cursor-pointer">{b?.name}</NavLink>
+              <NavLink key={i} className="hover:text-shop_main cursor-pointer">{b?.name}</NavLink>
             ))}
           </div>
         </div>
@@ -104,7 +104,7 @@ const FAQ = ({ data }) => {
   return (
     <div className="p-8 flex flex-col gap-4">
       {data?.map((a, i) => (
-        <NavLink to={a.url} className="cursor-pointer text-gray-500 font-semibold hover:text-shop_main">{a?.name}</NavLink>
+        <NavLink key={i} to={a.url} className="cursor-pointer text-gray-500 font-semibold hover:text-shop_main">{a?.name}</NavLink>
       ))}
     </div>
   )

@@ -8,24 +8,17 @@ import { ActionGetAllOrderByUser } from '~/Redux/actions/order'
 import noProduct from '~/Assests/images/noProducts.jpg'
 import { server } from '~/contants/contant'
 const ComponentPurchase = ({ active, menu }) => {
-  const { allOrders, messageCreateOrder, errorCreateOrder, rs, rs1 } = useSelector(state => state.order)
-  const { allCarts, checkedProductsId } = useSelector(state => state.cart)
+  const { allOrders } = useSelector(state => state.order)
   const { user, isAuthenticated } = useSelector(state => state.user)
-  const [allOrderAgain, setAllOrderAgain] = useState([])
-
+  const [emty, setEmty] = useState([])
   const dispatch = useDispatch()
-  console.log('rs1', rs1);
-  console.log(allOrders);
   useEffect(() => {
     dispatch(ActionGetAllOrderByUser())
   }, [dispatch])
-  const [emty, setEmty] = useState([])
   useEffect(() => {
     const a = allOrders?.map(a => a?.products.map(b => b[0]?.status))
     let rs = [...new Set(a.flat())];
     setEmty(rs)
-    console.log('rs', rs);
-    console.log('active', active);
   }, [allOrders])
   const handleOpenChat = (shopId) => {
     dispatch({ type: 'open', payload: true })
@@ -127,12 +120,6 @@ const ComponentPurchase = ({ active, menu }) => {
             <img src={noProduct} className='w-[100px] rounded-md h-[100px]' alt="" />
             <div className=' text-xl mt-4'>No Orders yet</div>
           </div> : null}
-      {/* {
-        allOrders?.length === 0 && <div className=' w-full  bg-white mt-4 flex flex-col items-center py-10'>
-          <img src={noProduct} className='w-[100px] rounded-md h-[100px]' alt="" />
-          <div className=' text-xl mt-4'>No Orders yet</div>
-        </div>
-      } */}
     </div >
   )
 }

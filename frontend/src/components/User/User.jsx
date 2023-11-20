@@ -13,13 +13,10 @@ import Profile from './UserAccount/Profile'
 import route from '~/configs/route'
 import UserVouchers from './UserVouchers/UserVouchers'
 import Payment from './UserAccount/Payment'
-import { toast } from 'react-toastify'
 import OderUpdate from './UserNotifications/OderUpdate'
-import axios from 'axios'
 import Refunds from './UserNotifications/Refunds'
 import Addresses from './UserAccount/Addresses'
 import { useDispatch, useSelector } from 'react-redux'
-import { Dialpad } from '@mui/icons-material'
 import { ActionGetAllAddress } from '~/Redux/actions/address'
 const menu = [
   {
@@ -57,7 +54,6 @@ const menu = [
     icon: <BsTicketPerforated />,
     url: '/vouchers',
     items: []
-
   },
 ]
 const User = () => {

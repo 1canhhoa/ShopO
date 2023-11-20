@@ -18,8 +18,8 @@ function FeatureProduct() {
             grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5"
           >
             {allProduct?.map((d, i) =>
-              <Reveal>
-                <ProductCard data={d} key={i} />
+              <Reveal key={i}>
+                <ProductCard data={d} />
               </Reveal>
             )}
           </ul>
