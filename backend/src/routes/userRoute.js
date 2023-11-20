@@ -113,8 +113,9 @@ let userRoute =(app) => {
       return  next (new ErrorHandler(error.message,500))
     }
   })
-  router.get('/test',(req,res,next)=>{
-    res.json({message:"ok con de"}).status(200)
+  router.get('/test',async(req,res,next)=>{
+    const user = await User.find({})
+    res.json({user:user[0]}).status(200)
   })
 
   app.use("/api/v1",router)

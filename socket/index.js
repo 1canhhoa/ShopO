@@ -5,11 +5,16 @@ const cors = require("cors");
 const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
-
+const mongodb = require('./src/configs/mongodb')
+const Cart = require('./src/models/cartModel')
+mongodb()
 require("dotenv").config({
   path: "./.env",
 });
-
+app.get('/test',async(req,res,next)=>{
+  const rs = await Cart.find({})
+ console.log('rs',rs);
+})
 app.use(cors());
 app.use(express.json());
 app.get("/", (req, res) => {
