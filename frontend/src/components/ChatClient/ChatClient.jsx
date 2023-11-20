@@ -119,13 +119,13 @@ const ChatClient = () => {
   }, [scroll]);
   const scrollRef = useRef(null);
   useEffect(() => {
-    if (user && conversations.length > 0) {
+    if (user && conversations?.length > 0) {
       const scrollContainer = scrollRef.current;
       const lastMessage = scrollContainer.lastElementChild;
       const scrollHeight = lastMessage.offsetTop + lastMessage.offsetHeight;
       scrollContainer.scrollTo({ top: scrollHeight, behavior: "smooth" });
     }
-  }, [conversations.length, messages, user]);
+  }, [conversations?.length, messages, user]);
 
   // SOCKET SOCKET
   useEffect(() => {
