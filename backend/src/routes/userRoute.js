@@ -20,7 +20,7 @@ dotenv.config()
 let router = express.Router()
 
 let userRoute =(app) => {
-  const encodedAccessToken = (payload) => {return jwt.sign({iss:"tohien",sub:payload,},process.env.JWT_ACCESSTK_SECRET,{expiresIn:"60m"})}
+  const encodedAccessToken = (payload) => {return jwt.sign({iss:"tohien",sub:payload,},process.env.JWT_ACCESSTK_SECRET,{expiresIn:"10s"})}
   router.post("/create-user" , upload.single("file") ,async (req, res, next) => {
     try { 
       const { username,password,email } = req.body;

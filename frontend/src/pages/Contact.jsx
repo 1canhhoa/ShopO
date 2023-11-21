@@ -17,12 +17,12 @@ function Contact() {
               <div className="flex gap-2 flex-col justify-center items-center w-full xl:w-[280px] h-[200px] bg-[#feeae5]">
                 <PhoneContact />
                 <div className="text-lg font-bold">PHONE</div>
-                <div className="text-base font-medium">+(323) 9847 3847 383</div>
+                <div className="text-base font-medium">+(84) 358405385</div>
               </div>
               <div className="w-full xl:w-[280px] gap-2 flex flex-col justify-center items-center bg-[#d3efff] h-[200px]">
                 <EmailContact />
                 <div className="text-lg font-bold">EMAIL</div>
-                <div className="text-base font-medium">Demoemail@gmail.com</div>
+                <div className="text-base font-medium">nhamvanhien31102002.com</div>
               </div>
             </div>
             <div className="mt-8 w-full flex gap-3 flex-col py-3 p-4 bg-[#e7f2ec] ">
@@ -30,7 +30,7 @@ function Contact() {
                 <MapContact />
                 <div>
                   <div className="text-lg font-bold">ADDRESS</div>
-                  <div className="text-base font-medium  text-gray-500 mt-2">4517 Washington Ave. Manchester, Road 2342,Kentucky 39495</div>
+                  <div className="text-base font-medium  text-gray-500 mt-2">Học viện bưu chính viễn thông ,Hà đông, Hà nội</div>
                 </div>
               </div>
               <Map />

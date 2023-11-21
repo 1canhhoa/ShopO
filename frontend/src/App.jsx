@@ -33,11 +33,12 @@ function App() {
       dispatch(ActionGetAllCart(user?.email))
     }
   }, [dispatch, user])
-  console.log('1');
 
   return (
     <>
-      {loading ? <LoaderBig /> :
+      {loading ?
+        <LoaderBig />
+        :
         <BrowserRouter>
           <Routes>
             {publicRoutes.map((route, index) => {

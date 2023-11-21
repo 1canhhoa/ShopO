@@ -6,12 +6,13 @@ import FeatureProduct from '~/components/Home/FeatureProduct'
 import Events from '~/components/Events/Events'
 import Sponsored from '~/components/Home/Sponsored'
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { ActionGetAllProduct } from '~/Redux/actions/product'
 import { ActionGetAllEvent } from '~/Redux/actions/event'
 import PayPal from '~/components/Checkout/Paypal'
 function Home() {
   const dispatch = useDispatch()
+  const { user } = useSelector(state => state.user)
   useEffect(() => {
     dispatch(ActionGetAllProduct())
     dispatch(ActionGetAllEvent())

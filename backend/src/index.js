@@ -36,13 +36,6 @@ app.use(cors(corsConfig));
 app.options('*', cors(corsConfig));
 express.static.mime.define({ 'application/javascript': ['js'] });
 app.use(express.static(path.join(__dirname,'../frontend/dist')));
-console.log(path.join(__dirname,'../frontend/dist'));
-// app.use((req, res, next) => {
-//   if (req.url.endsWith('.js')) {
-//     res.set('Content-Type', 'application/javascript');
-//   }
-//   next();
-// });
 userRoute(app)
 shopRoute(app)
 eventRoute(app)
