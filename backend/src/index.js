@@ -35,8 +35,8 @@ app.use(bodyParser.urlencoded({extended:true,limit:"200mb"}))
 
 app.use(cors(corsConfig));
 app.options('*', cors(corsConfig));
-app.use(express.static(path.join(__dirname,'../uploads')));
-app.use(express.static(path.join(__dirname,'../frontend/src/Assests')));
+app.use(express.static(path.join(__dirname,'../frontend/dist')));
+console.log(path.join(__dirname,'../frontend/dist'));
 // app.use((req, res, next) => {
 //   if (req.url.endsWith('.js')) {
 //     res.set('Content-Type', 'application/javascript');

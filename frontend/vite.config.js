@@ -10,6 +10,12 @@ export default defineConfig({
   },
   resolve: {
     alias: [{ find: "~", replacement: "/src" }],
+    extensions: [
+      '.js',
+      '.json',
+      '.jsx',
+      '.mjs',
+  ],
   },
     build: {
       rollupOptions: {
@@ -22,4 +28,9 @@ export default defineConfig({
         },
       },
     },
+    server:{
+      port:4000,
+      open:true,
+      cors:true
+    }
 });
