@@ -37,12 +37,12 @@ app.use(cors(corsConfig));
 app.options('*', cors(corsConfig));
 app.use(express.static(path.join(__dirname,'../uploads')));
 app.use(express.static(path.join(__dirname,'../frontend/src/Assests')));
-app.use((req, res, next) => {
-  if (req.url.endsWith('.js')) {
-    res.set('Content-Type', 'application/javascript');
-  }
-  next();
-});
+// app.use((req, res, next) => {
+//   if (req.url.endsWith('.js')) {
+//     res.set('Content-Type', 'application/javascript');
+//   }
+//   next();
+// });
 userRoute(app)
 shopRoute(app)
 eventRoute(app)

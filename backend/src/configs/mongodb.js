@@ -10,5 +10,4 @@ let connection = async () => {
     console.log("failure");
   }
 };
-// export default connection
 module.exports = connection;

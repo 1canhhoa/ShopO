@@ -19,8 +19,6 @@ import { server } from '~/contants/contant'
 // import './App.css'
 function App() {
   const dispatch = useDispatch()
-  // const navigate = useNavigate()
-  // console.log("server", server);
   axios.defaults.baseURL = server
   axios.defaults.withCredentials = true
   const { loading, user, isAthenticated } = useSelector(state => state.user)
@@ -35,7 +33,8 @@ function App() {
       dispatch(ActionGetAllCart(user?.email))
     }
   }, [dispatch, user])
-  console.log('isAthenticated', isAthenticated);
+  console.log('1');
+
   return (
     <>
       {loading ? <LoaderBig /> :

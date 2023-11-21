@@ -50,7 +50,7 @@ const Cart = () => {
   const { pathname, state } = useLocation()
   // console.log('pathname', pathname, state);
 
-  // console.log("data1", data1);
+  console.log('3');
 
   useEffect(() => {
     if (state?.type === 'buynow') {

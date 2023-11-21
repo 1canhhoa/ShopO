@@ -57,6 +57,7 @@ const menu = [
   },
 ]
 const User = () => {
+  console.log('2');
   const { pathname } = useLocation()
   const [activeManuItem, setActiveMenuItem] = useState(0)
   const { user } = useSelector(state => state.user)
