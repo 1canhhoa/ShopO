@@ -50,7 +50,8 @@ const Cart = () => {
   const { pathname, state } = useLocation()
   // console.log('pathname', pathname, state);
 
-  console.log('3');
+
+
 
   useEffect(() => {
     if (state?.type === 'buynow') {
@@ -78,10 +79,8 @@ const Cart = () => {
   }, [allCarts, fakechoose])
   ///////////////////
   useEffect(() => {
-    if (isCheckAll?.length === 0) {
-      const shopIds = data1?.map(d => ({ shopId: d[0].product.shop._id, checked: false }))
-      setIsCheckAll(shopIds);
-    }
+    const shopIds = data1?.map(d => ({ shopId: d[0].product.shop._id, checked: false }))
+    setIsCheckAll(shopIds);
   }, [data1, isCheckAll?.length])
   ////////////////////
   useEffect(() => {
@@ -173,13 +172,14 @@ const Cart = () => {
   // console.log("isCheck", isCheck);
   const handleClickChecked = (e, d) => {
     const { id, checked } = e.target;
-    const singleCheck = d.map(m => m._id)
-    const shopId = d[0].product.shop._id
+    const singleCheck = d?.map(m => m._id)
+    const shopId = d[0]?.product.shop._id
     const findObjectToFix = isCheckAll?.find(is => is.shopId === shopId)
     const getQuantiBelongToArray = isCheck.filter(is => singleCheck.includes(is))
     setIsCheck([...isCheck, id]);
     if (checked) {
       if ((!isCheck.includes(id)) && (d.length - getQuantiBelongToArray.length === 1)) {
+        console.log('isCheckAll', isCheckAll);
         setIsCheckAll(prevArray => prevArray.map(item => {
           if (item.shopId === findObjectToFix.shopId) {
             return { ...item, checked: true };
@@ -256,7 +256,6 @@ const Cart = () => {
     dispatch(ActionCheckedProducts(isCheck))
     dispatch(ActionGetAllAddress(user._id))
   }
-  console.log("data1", data1);
   return (
     <div className=' bg-slate-100 pt-4'>
       <div className='w-[1216px] bg-slate-100 relative th-fl mx-auto '>
@@ -286,7 +285,7 @@ const Cart = () => {
                     <input type='checkbox' checked={arrShopIdAndchecked?.checked} onChange={(e) => handleClickCheckedAll(e, d)} id='select-all' />
                     <span className='pl-2 text-sm font-medium'>{d[0]?.product?.shop?.name}</span>
                   </div>
-                  {d.map((m, i) => {
+                  {d?.map((m, i) => {
                     const p = m?.product
                     const arrUniqueCapacities = handleCapacity(p)
                     const arrcapa = p?.capacities[m?.class]?.capacity.map(c => c.capacity)
@@ -299,7 +298,7 @@ const Cart = () => {
                             {/* checkbox */}
                             <input onChange={(e) => handleClickChecked(e, d)} checked={isCheck?.includes(m._id)} id={m._id} type='checkbox' />
                             {/* Image */}
-                            <a className='w-[25%]  th-fl'><img src={`${server}/${p?.capacities[1]?.url}`} className='w-20 h-20 object-cover th-bdimg' alt="" /></a>
+                            <a className='w-[25%] th-fl'><img src={`${server}/${p?.capacities[1]?.url}`} className='w-20 h-20 object-cover th-bdimg' alt="" /></a>
                             {/* Name */}
                             <div className="w-[75%] flex gap-1 flex-col justify-start items-start text-sm font-normal">
                               <span>{p?.name?.length > 80 ? p?.name.slice(0, 50) + ' ...' : p?.name}</span>
