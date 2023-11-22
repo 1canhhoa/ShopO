@@ -44,8 +44,6 @@ const ShopLogin = () => {
 
   const submitLogin = (e) => {
     e.preventDefault()
-
-
     setLoadpage(true)
     axios.post("/api/v1/login-user", { email, password }, { withCredentials: true })
       .then(() => {
