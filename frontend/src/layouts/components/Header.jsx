@@ -21,6 +21,7 @@ import 'tippy.js/themes/light-border.css'// border all
 import 'tippy.js/animations/perspective.css'//animation tippy
 import 'tippy.js/animations/shift-away.css'//animation từ trên xuống
 import 'tippy.js/animations/scale.css'//animation tippy
+import LoaderBig from "~/components/LoaderBig.jsx";
 
 
 function Header() {
@@ -77,10 +78,9 @@ function Header() {
     <>
       {
         loading && loadingSeller ?
-          <div className="fixed w-full h-screen top-0 left-0 bg-red-600 z-50">
-            toheheheheheheh
-          </div>
-          : <header className="mx-auto relative">
+          <LoaderBig />
+          :
+          <header className="mx-auto relative">
             <Header1 />
             {/* HEADER 2 */}
             <div className="w-full">
