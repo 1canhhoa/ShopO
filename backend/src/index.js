@@ -14,6 +14,7 @@ const messagesRoute = require('./routes/messagesRoute')
 const cartRoute = require('./routes/cartRoute')
 const addressRoute =require('./routes/addressRoute')
 const orderRoute = require('./routes/orderRoute')
+const testApiRoute = require('./routes/testApi')
 const ErrorHandler = require('./utils/ErrorHandle')
 const conversationRoute = require('./routes/conversationRoute')
 const path = require('path')
@@ -29,7 +30,8 @@ mongodb()
 dotenv.config()
 app.use(express.json())
 app.use(cookieParser())
-
+app.use('/public', express.static(path.join(__dirname, '/public')));
+console.log('__dirname',__dirname);
 app.use('/',express.static("uploads"))
 app.use(bodyParser.urlencoded({extended:true,limit:"200mb"}))
 app.use(cors(corsConfig));
@@ -46,6 +48,7 @@ addressRoute(app)
 orderRoute(app)
 conversationRoute(app)
 messagesRoute(app)
+testApiRoute(app)
 
 app.use(function (err, req, res, next) {
   console.error(err);

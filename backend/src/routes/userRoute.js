@@ -3,7 +3,6 @@ const express = require('express')
 const {upload} = require('~/multer')
 const User =require('~/models/userModel')
 const Shop = require('~/models/shopModel')
-const {verifyAccessToken} = require('~/controller/userController')
 const catchAsyncErrors = require("~/middleware/catchAsyncErrors");
 const ErrorHandler = require('~/utils/ErrorHandle')
 const path = require("path")
@@ -16,6 +15,7 @@ const sendAccessToken = require("~/utils/sendAccessToken")
 const sendShopToken = require("~/utils/sendShopToken")
 const {isAuthenticated} = require('~/middleware/auth')
 const { log } = require('console')
+const data = require("~/data/data")
 dotenv.config()
 let router = express.Router()
 
@@ -117,7 +117,6 @@ let userRoute =(app) => {
     const user = await User.find({})
     res.json({user:user[0]}).status(200)
   })
-
   app.use("/api/v1",router)
 }
 
